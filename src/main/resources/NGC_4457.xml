@@ -1,0 +1,1268 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>Wikipedia</sitename>
+    <dbname>enwiki</dbname>
+    <base>https://en.wikipedia.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.31.0-wmf.22</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Wikipedia</namespace>
+      <namespace key="5" case="first-letter">Wikipedia talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="100" case="first-letter">Portal</namespace>
+      <namespace key="101" case="first-letter">Portal talk</namespace>
+      <namespace key="108" case="first-letter">Book</namespace>
+      <namespace key="109" case="first-letter">Book talk</namespace>
+      <namespace key="118" case="first-letter">Draft</namespace>
+      <namespace key="119" case="first-letter">Draft talk</namespace>
+      <namespace key="446" case="first-letter">Education Program</namespace>
+      <namespace key="447" case="first-letter">Education Program talk</namespace>
+      <namespace key="710" case="first-letter">TimedText</namespace>
+      <namespace key="711" case="first-letter">TimedText talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>NGC 4457</title>
+    <ns>0</ns>
+    <id>54962388</id>
+  <revision>
+      <id>796307686</id>
+      <timestamp>2017-08-19T22:51:23Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>[[WP:AES|←]]Created page with '{{Infobox Galaxy | name = [[New General Catalogue|NGC]] 4457 | image = [[File:NGC 4457.jpg|250px]] | caption= The galaxy NGC 4457. | epoch = [[J2000]] | type = (...'</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5343">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457.
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|Active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729-743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt;  NGC 4457 was discovered by astronomer [[William Herschel]] on February  23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; NGC 4457 is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; 
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral. The inner spiral is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in it's disk while it's inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy and the gas in the surrounding cluster&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to get stripped away in effect known as [[Ram-pressure stripping|Ram Pressure Stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]
+== References ==
+{{reflist}}
+{{Ngc45}}</text>
+      <sha1>b866yn44lkvzp8gecr988oruzp89ylc</sha1>
+    </revision>
+    <revision>
+      <id>796560413</id>
+      <parentid>796307686</parentid>
+      <timestamp>2017-08-21T17:50:35Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5378">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457.
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|Active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729-743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt;  NGC 4457 was discovered by astronomer [[William Herschel]] on February  23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; NGC 4457 is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; 
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral. The inner spiral is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in it's disk while it's inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy and the gas in the surrounding cluster&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to get stripped away in effect known as [[Ram-pressure stripping|Ram Pressure Stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]
+== References ==
+{{reflist}}
+{{Ngc45}}</text>
+      <sha1>qh026nb2u9sa0m1iz1doo58gd4eun4p</sha1>
+    </revision>
+    <revision>
+      <id>797278209</id>
+      <parentid>796560413</parentid>
+      <timestamp>2017-08-26T01:23:13Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* Truncated disk */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5386">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457.
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|Active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729-743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt;  NGC 4457 was discovered by astronomer [[William Herschel]] on February  23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; NGC 4457 is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; 
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral. The inner spiral is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in it's disk while it's inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding Virgo cluster&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to get stripped away in effect known as [[Ram-pressure stripping|Ram Pressure Stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]
+== References ==
+{{reflist}}
+{{Ngc45}}</text>
+      <sha1>4ei0wb33nck44kyjk6fcss466tek8z5</sha1>
+    </revision>
+    <revision>
+      <id>797278268</id>
+      <parentid>797278209</parentid>
+      <timestamp>2017-08-26T01:23:56Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5380">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457.
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|Active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729-743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt;  NGC 4457 was discovered by astronomer [[William Herschel]] on February  23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; NGC 4457 is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; 
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral. The inner spiral is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in it's disk while it's inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to get stripped away in effect known as [[Ram-pressure stripping|Ram Pressure Stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]
+== References ==
+{{reflist}}
+{{Ngc45}}</text>
+      <sha1>3rff8qz465ewaakegmr0xf74v3aziyv</sha1>
+    </revision>
+    <revision>
+      <id>797535267</id>
+      <parentid>797278268</parentid>
+      <timestamp>2017-08-27T17:41:06Z</timestamp>
+      <contributor>
+        <username>Jessicapierce</username>
+        <id>2003421</id>
+      </contributor>
+      <minor/>
+      <comment>minor copy edits, condensed some wording</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5332">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729-743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February  23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; 
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457|Sasmirala page on NGC 4457]
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]
+== References ==
+{{reflist}}
+{{Ngc45}}</text>
+      <sha1>0eeaqif30vak6446upnqos8jef512jr</sha1>
+    </revision>
+    <revision>
+      <id>797718761</id>
+      <parentid>797535267</parentid>
+      <timestamp>2017-08-28T19:59:47Z</timestamp>
+      <contributor>
+        <username>Yobot</username>
+        <id>7328338</id>
+      </contributor>
+      <minor/>
+      <comment>Removed invisible unicode characters + other fixes ([[User:Yobot/55|Task 55]]), replaced: →   (3) using [[Project:AWB|AWB]] (12151)</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5330">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457|Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>n2xd0puo3fssefpg5uws63i2e4xj1bw</sha1>
+    </revision>
+    <revision>
+      <id>797861180</id>
+      <parentid>797718761</parentid>
+      <timestamp>2017-08-29T16:10:54Z</timestamp>
+      <contributor>
+        <username>Onel5969</username>
+        <id>10951369</id>
+      </contributor>
+      <minor/>
+      <comment>Disambiguating links to [[Ly]] (link changed to [[Light-year]]) using [[User:Qwertyytrewqqwerty/DisamAssist|DisamAssist]].</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5341">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457|Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>7uy280wqzj9g5zoi149c5pt6gonwz6y</sha1>
+    </revision>
+    <revision>
+      <id>797888157</id>
+      <parentid>797861180</parentid>
+      <timestamp>2017-08-29T19:14:17Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* External links */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5340">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457|Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>dwigq2b52qv8tf1e8y4vu82qfu7t6td</sha1>
+    </revision>
+    <revision>
+      <id>797888257</id>
+      <parentid>797888157</parentid>
+      <timestamp>2017-08-29T19:14:57Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* External links */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5334">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457|Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>joeoliiu61ttnydjn3bf0iluh1kv51t</sha1>
+    </revision>
+    <revision>
+      <id>797888333</id>
+      <parentid>797888257</parentid>
+      <timestamp>2017-08-29T19:15:27Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* External links */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5335">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>6p19ou99l72l2s4sleafza4l2wnmlfs</sha1>
+    </revision>
+    <revision>
+      <id>797888348</id>
+      <parentid>797888333</parentid>
+      <timestamp>2017-08-29T19:15:39Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* External links */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5342">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=}}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=}}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>3603iyl0jy2nrm83gwdln83reeez0yc</sha1>
+    </revision>
+    <revision>
+      <id>799692873</id>
+      <parentid>797888348</parentid>
+      <timestamp>2017-09-09T08:01:31Z</timestamp>
+      <contributor>
+        <username>Bibcode Bot</username>
+        <id>14394459</id>
+      </contributor>
+      <minor/>
+      <comment>Adding 2 [[arXiv|arxiv eprint(s)]], 2 [[bibcode|bibcode(s)]] and 1 [[digital object identifier|doi(s)]]. Did it miss something? Report bugs, errors, and suggestions at [[User talk:Bibcode Bot]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5471">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of star-formation in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>j631gxk0ghhssfv3rpxbx13tlfr0gla</sha1>
+    </revision>
+    <revision>
+      <id>802972421</id>
+      <parentid>799692873</parentid>
+      <timestamp>2017-09-29T17:16:45Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* Truncated disk */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5490">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding cluster,&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>pmqx1famaqxtrxpn4kjvwh3waonavc9</sha1>
+    </revision>
+    <revision>
+      <id>803120532</id>
+      <parentid>802972421</parentid>
+      <timestamp>2017-09-30T15:50:02Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* Physical characteristics */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5508">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 104]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>grcf3zu5e9upuzllrscmoa2aq2io4it</sha1>
+    </revision>
+    <revision>
+      <id>803120611</id>
+      <parentid>803120532</parentid>
+      <timestamp>2017-09-30T15:50:32Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* See also */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5507">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Messier 60]]
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>h8u4aj7jwgi2nathkkqycs2sukej444</sha1>
+    </revision>
+    <revision>
+      <id>803121448</id>
+      <parentid>803120611</parentid>
+      <timestamp>2017-09-30T15:57:06Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* See also */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5615">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the gas in the galaxy with the gas in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Comet Galaxy]] - a distant galaxy in the cluster [[Abell 2667]] which is experiencing [[ram-pressure stripping]] as well
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>bkgjfknqdeuxv5zmz6nn1v8e8h158j1</sha1>
+    </revision>
+    <revision>
+      <id>803133043</id>
+      <parentid>803121448</parentid>
+      <timestamp>2017-09-30T17:20:37Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* Physical characteristics */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5663">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the [[Interstellar medium|gas]] in the galaxy with the [[Intracluster medium|gas]] in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Comet Galaxy]] - a distant galaxy in the cluster [[Abell 2667]] which is experiencing [[ram-pressure stripping]] as well
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>43ezt5726lkc136tqy37ziar2gee93t</sha1>
+    </revision>
+    <revision>
+      <id>803133396</id>
+      <parentid>803133043</parentid>
+      <timestamp>2017-09-30T17:23:02Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* Physical characteristics */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5666">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the [[Interstellar medium|gas]] in the galaxy with the [[Intracluster medium|gas]] in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in an effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Comet Galaxy]] - a distant galaxy in the cluster [[Abell 2667]] which is experiencing [[ram-pressure stripping]] as well
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457| Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>7q6syqbruwrarj3i4lmvqqto1dth31m</sha1>
+    </revision>
+    <revision>
+      <id>804060037</id>
+      <parentid>803133396</parentid>
+      <timestamp>2017-10-06T13:28:53Z</timestamp>
+      <contributor>
+        <username>Fucherastonmeym87</username>
+        <id>30859278</id>
+      </contributor>
+      <comment>/* External links */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5665">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = [[File:NGC 4457.jpg|250px]]
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the [[Interstellar medium|gas]] in the galaxy with the [[Intracluster medium|gas]] in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in an effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Comet Galaxy]] - a distant galaxy in the cluster [[Abell 2667]] which is experiencing [[ram-pressure stripping]] as well
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457 Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>tqcyi6wj2gql1finfwmhel54oq6eqm1</sha1>
+    </revision>
+    <revision>
+      <id>828010158</id>
+      <parentid>804060037</parentid>
+      <timestamp>2018-02-28T01:05:58Z</timestamp>
+      <contributor>
+        <username>Tom.Reding</username>
+        <id>9784415</id>
+      </contributor>
+      <minor/>
+      <comment>Fix [[:Category:Pages using deprecated image syntax]]; [[WP:GenFixes]] on, using [[Project:AWB|AWB]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="5671">{{Infobox Galaxy
+| name = [[New General Catalogue|NGC]] 4457
+| image = NGC 4457.jpg
+| image_size = 250px
+| caption= The galaxy NGC 4457
+| epoch = [[J2000]]
+| type = (R)SAB(s)0/a, [[LINER]]  &lt;ref name=&quot;ned&quot;&gt;{{cite web
+  | title=NASA/IPAC Extragalactic Database
+  | work=Results for NGC 4457
+  | url=http://nedwww.ipac.caltech.edu/
+  | accessdate=2017-08-18}}&lt;/ref&gt;
+| ra = {{RA|12|28|59.0}}&lt;ref name=&quot;ned&quot; /&gt;
+| dec = {{DEC|03|34|14}}&lt;ref name=&quot;ned&quot; /&gt;
+| dist_ly = 54,801,600 [[Light-year|ly]]
+| group_cluster = [[Virgo Cluster]]
+| z = 0.002942/882 km/s&lt;ref name=&quot;ned&quot; /&gt;  
+| appmag_v =11.76 &lt;ref name=&quot;ned&quot; /&gt;
+| size_v = 2.7 x 2.3&lt;ref name=&quot;ned&quot; /&gt;
+| constellation name = [[Virgo (constellation)|Virgo]]
+| names = CGCG 42-124, IRAS 12264+0350, MCG 1-32-75, [[Principal Galaxies Catalogue|PGC]] 41101, [[Uppsala General Catalogue|UGC]] 7609, VCC 1145 &lt;ref name=&quot;ned&quot; /&gt; 
+|size=~ 38,687.32 ly}} 
+'''NGC 4457''' is a [[spiral galaxy]] located about 55 million [[light-year]]s away&lt;ref name=&quot;:0&quot;&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/objsearch?objname=NGC+4457&amp;extend=no&amp;hconst=73&amp;omegam=0.27&amp;omegav=0.73&amp;corr_z=1&amp;out_csys=Equatorial&amp;out_equinox=J2000.0&amp;obj_sort=RA+or+Longitude&amp;of=pre_text&amp;zv_breaker=30000.0&amp;list_limit=5&amp;img_stamp=YES|title=Your NED Search Results|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt; in the [[constellation]] of [[Virgo (constellation)|Virgo]].&lt;ref&gt;{{Cite web|url=https://dso-browser.com/deep-sky/5503/ngc-4457/galaxy|title=Galaxy NGC 4457 - Galaxy in Virgo Constellation · Deep Sky Objects Browser|last=Rojas|first=Sebastián García|website=DSO Browser|language=en|access-date=2017-08-19}}&lt;/ref&gt; It is also classified as a [[LINER]] galaxy, a class of [[Active galaxies|active galaxy]] defined by their [[Spectral line|spectral line emissions]].&lt;ref&gt;{{Cite journal|last=TERASHIMA|first=YUICHI|last2=HO|first2=LUIS C.|last3=PTAK|first3=ANDREW F.|last4=MUSHOTZKY|first4=RICHARD F.|last5=SERLEMITSOS|first5=PETER J.|last6=YAQOOB|first6=TAHIR|last7=KUNIEDA|first7=HIDEYO|date=20 April 2000|title=ASCA OBSERVATIONS OF ''TYPE 2 '' LINERs: EVIDENCE FOR A STELLAR SOURCE OF IONIZATION|url=http://iopscience.iop.org/article/10.1086/308690/pdf|journal=The Astrophysical Journal|volume=533|pages=729–743|via=|arxiv = astro-ph/9911340 |bibcode = 2000ApJ...533..729T |doi = 10.1086/308690 }}&lt;/ref&gt;&lt;ref name=&quot;:0&quot; /&gt; NGC 4457 Is inclined by about 33°.&lt;ref&gt;{{Cite journal|last=Vollmer|first=B.|last2=Soida|first2=M.|last3=Beck|first3=R.|last4=Chung|first4=A.|last5=Urbanik|first5=M.|last6=Chyzy|first6=K.T.|last7=Otmianowska-Mazur|first7=K.|last8=Kenney|first8=J.D.P.|date=4 April 2013|title=Large-scale radio continuum properties of 19 Virgo cluster galaxies⋆ The influence of tidal interactions, ram pressure stripping, and accreting gas envelopes|url=https://arxiv.org/pdf/1304.1279v1.pdf|journal=Astronomy &amp; Astrophysics|volume=553|pages=38|doi=10.1051/0004-6361/201321163|via=|arxiv = 1304.1279 |bibcode = 2013A&amp;A...553A.116V }}&lt;/ref&gt; It was discovered by astronomer [[William Herschel]] on February 23, 1784.&lt;ref&gt;{{Cite web|url=http://cseligman.com/text/atlas/ngc44a.htm#4457|title=New General Catalog Objects: NGC 4450 - 4499|website=cseligman.com|language=en-US|access-date=2017-08-18}}&lt;/ref&gt; It is a member of the [[Virgo cluster of galaxies|Virgo Cluster of galaxies]].&lt;ref name=&quot;:1&quot;&gt;{{Cite web|url=http://kudzu.astr.ua.edu/devatlas/NGC_4457______B___________.html|title=NGC 4457 - (R)SAB(s)a|last=|first=|date=|website=The de Vaucouleurs Atlas of Galaxies|archive-url=|archive-date=|dead-url=|access-date=2017-08-19}}&lt;/ref&gt;&lt;ref&gt;{{Cite web|url=https://ned.ipac.caltech.edu/cgi-bin/NEDatt?objname=NGC+4457|title=Detailed Object Classifications|website=ned.ipac.caltech.edu|access-date=2017-08-19}}&lt;/ref&gt;
+
+==Physical characteristics==
+NGC 4457 has a broad oval zone containing an inner spiral which is defined mainly by two fairly open arms. There is a well-defined outer ring that is completely detached from the inner regions of the galaxy.&lt;ref name=&quot;:1&quot; /&gt;
+
+===Truncated disk===
+NGC 4457 has a severely reduced amount of [[Star formation|star-formation]] in its disk while its inner regions have a normalized rate of massive star formation.&lt;ref name=&quot;:1&quot; /&gt; This may have been caused by a recent interaction of the [[Interstellar medium|gas]] in the galaxy with the [[Intracluster medium|gas]] in the surrounding [[Virgo Cluster|cluster]],&lt;ref&gt;{{Cite journal|last=Cortes|first=Juan R.|last2=Kenney|first2=Jeffrey D. P.|last3=Hardy|first3=Eduardo|date=24 December 2014|title=INTEGRAL-FIELD STELLAR AND IONIZED GAS KINEMATICS OF PECULIAR VIRGO CLUSTER SPIRAL GALAXIES|url=http://iopscience.iop.org/article/10.1088/0067-0049/216/1/9/pdf|journal=The Astrophysical Journal Supplement Series|volume=216:9|pages=34|via=}}&lt;/ref&gt; causing the gas to be stripped away in an effect known as [[ram-pressure stripping]].&lt;ref&gt;{{Cite web|url=http://www.aip.de/~rpiontek/ram.html|title=Robert A. Piontek -- Ram Pressure Stripping|website=www.aip.de|access-date=2017-08-19}}&lt;/ref&gt;
+
+== See also ==
+* [[List of NGC objects (4001–5000)]]
+* [[Messier 90]]
+* [[Comet Galaxy]] - a distant galaxy in the cluster [[Abell 2667]] which is experiencing [[ram-pressure stripping]] as well
+
+== External links ==
+{{WikiSky}}
+* [http://dc.zah.uni-heidelberg.de/sasmirala/q/prod/qp/NGC%204457 Sasmirala page on NGC 4457]
+
+== References ==
+{{reflist}}
+{{Ngc45}}
+
+[[Category:Spiral galaxies]]
+[[Category:LINER galaxies]]
+[[Category:Virgo (constellation)]]
+[[Category:NGC objects|4457]]
+[[Category:Principal Galaxies Catalogue objects|41101]]
+[[Category:UGC objects|7609]]
+[[Category:Astronomical objects discovered in 1784]]
+[[Category:Virgo Cluster]]</text>
+      <sha1>bi32fy3m8ty0nq8omeizzfqslwp0t0y</sha1>
+    </revision>
+  </page>
+</mediawiki>
