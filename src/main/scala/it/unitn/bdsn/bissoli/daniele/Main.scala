@@ -1,9 +1,12 @@
 package it.unitn.bdsn.bissoli.daniele
 
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, Row, SparkSession}
+import org.apache.spark.sql.{DataFrame, Encoders, Row, SparkSession}
 
-import scala.util.matching.Regex
+import java.sql.Timestamp
+import java.util.TimeZone
+
+import scala.sys
 
 trait SparkSessionWrapper {
   // remove master if you want to execute this program in a cluster
@@ -18,40 +21,48 @@ trait SparkSessionWrapper {
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
-    // !! Important to put here since only here the spark object
-    // is created with its properties
-//    import spark.implicits._
+    import spark.implicits._
 
-    val resourcesDir = "file:///home/daniele/university/04_computerScience/BDSN/project/wikipedia-graph/src/main/resources"
-//    val resourcesDir = "file:///home/daniele/university/04_computerScience/BDSN/project/sample_data"
-    // load into memory the xml file as a dataframe which rows are each page of
-//    val fp = s"$resourcesDir/medium.xml"
-
+    // retrieve the path of resources folder
+    val resourcesDir = sys.env.getOrElse("SP_RES_DIR", "ciao")
 
     val fp = s"$resourcesDir/NGC_4457.xml"
+//    val fp = s"$resourcesDir/small.xml"
     val df = extractPages(spark, fp)
     df.printSchema()
-    df.filter(col("title").equalTo("NGC 4457")).show()
-    df.show(300)
+
+    // here you'll need to apply the preprocessing operations
+    val df2 = df.map(r => (
+      r.getAs[String]("title"),
+      r.getAs[Timestamp]("timestamp"),
+      Option(r.getAs[String]("text")).getOrElse("").split(" ")
+    )).toDF("title", "timestamp", "text")
+
+//    df2.show(30)
 
 //    df.foreach((r) => { println(extractInfobox(r)) })
-    println(PageAnalyzier.extractInfobox(df.head()))
+//    println(PageAnalyzier.extractInfobox(df.head()))
 
     // TODO:  SIMILARITY BETWEEN PAGES => check internal wikipedia links
 
     // Input data: Each row is a bag of words from a sentence or document.
-    val documentDF = spark.createDataFrame(Seq(
-      ("hello", "Hi I heard about Spark".split(" ")),
-      ("class","I wish Java could use case classes".split(" ")),
-      ("log1","Logistic regression models are neat".split(" ")),
-      ("log2","Logistic regression models are good".split(" "))
-    ).map(e => (e._1, e._2))).toDF("title","text")
+//    val documentDF = spark.createDataFrame(Seq(
+//      ("hello", "2018-03-27T12:25:58Z", "Hi I heard about Spark".split(" ")),
+//      ("class", "2018-03-27T11:25:58","I wish Java could use case classes".split(" ")),
+//      ("log1", "2018-03-26T12:25:58","Logistic regression models are neat".split(" ")),
+//      ("log2", "2017-03-27T12:25:58","Logistic regression models are good".split(" "))
+//    )
+//      .map(e => (e._1, e._2, e._3)))
+//      .toDF("title", "ts","text")
+//      .withColumn("timestamp",to_utc_timestamp(col("ts"),TimeZone.getDefault.getID))
 
-    val cs = new CosineSimilarity("text", 10)
-    val result : DataFrame = cs.computeCS(documentDF)
+    val cs = new CosineSimilarity("text", 256)
+    val result : DataFrame = cs.computeCS(df2)
+//    val cs = new CosineSimilarity("text", 16)
+//    val result : DataFrame = cs.computeCS(documentDF)
 
-    result.explain()
-    result.show()
+//    result.explain()
+    result.show(50)
 
     spark.stop()
   }
@@ -75,12 +86,17 @@ object Main extends SparkSessionWrapper {
       )
       /* convert pages edits sequence into a new row for each edit entry */
       .withColumn(
-      "tmp",
-      explode(zip(col("timestamp"), col("text")))
-    )
+        "tmp",
+        explode(zip(col("timestamp"), col("text")))
+      )
+      /* convert read timestamp from string to timestamp type */
+      .withColumn("timestamp",
+        to_utc_timestamp(col("tmp._1"),
+          TimeZone.getDefault.getID)
+      )
       .select(
         col("title"),
-        col("tmp._1").alias("timestamp"),
+        col("timestamp"),
         col("tmp._2").alias("text")
       )
   }

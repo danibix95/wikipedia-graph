@@ -1,9 +1,11 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import org.apache.spark.ml.feature.{Word2Vec, Word2VecModel}
+import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.functions.{col, monotonically_increasing_id}
+import org.apache.spark.sql.functions.col
 import org.apache.spark.sql.{DataFrame, SparkSession}
+
+import java.sql.Timestamp
 
 import scala.math.{pow, sqrt}
 
@@ -12,6 +14,7 @@ class CosineSimilarity(var inputCol: String, val vectorSize: Int) extends Serial
   // transform operations work only in objects or things that are Serializable
 
   // import implicits using current spark session
+  // (used to recognize $ as col and for default encoders)
   private val spark = SparkSession.getActiveSession.get
   import spark.implicits._
 
@@ -37,52 +40,70 @@ class CosineSimilarity(var inputCol: String, val vectorSize: Int) extends Serial
     * */
   private def norm(v: Seq[Double]) : Double = sqrt(v.map(pow(_, 2)).sum)
 
-  /** Returns the cosine similarity of each pair of row for given dataframe.
+  /** Returns the cosine similarity of each pair of pages
+    * for given dataframe containing Wikipedia pages representation.
     * */
   def computeCS(dataframe : DataFrame) : DataFrame = {
     val features = word2Vec.fit(dataframe)
       .transform(dataframe)
-      .withColumn("id", monotonically_increasing_id)
+      .map(r => {
+        val title = r.getAs[String]("title")
+        val timestamp = r.getAs[Timestamp]("timestamp")
+        val features = r.getAs[Vector]("vector").toArray
 
+        // remove text and pre-compute features vectors norm
+        (title, timestamp, features, norm(features))
+      })
+      .toDF("title", "timestamp", "features", "norm")
+
+    /* idea behind this step: first create the pairs of all possible
+       different pages, then compute cosine similarity and eventually
+       discards rows which are duplicates
+       (is it possible to avoid computing them?)
+
+       I can exploit the fact that pages have a timestamp,
+       therefore I can create pairs only with pages that
+       have a timestamp greater than mine
+       (so I won't create duplicated pairs nor pairs of same page)
+    * */
     features.as("a")
-      /* create pairs of */
+      /* create pairs of pages */
       .join(
         features.as("b"),
-        col("a.id") =!= col("b.id")
+        $"a.timestamp" > $"b.timestamp"
       )
       .select(
-        col("a.title").as('title1),
-        col("b.title").as('title2),
-        col("a.id").as('id1),
-        col("b.id").as('id2),
-        col("a.vector").as('vector1),
-        col("b.vector").as('vector2)
+        $"a.title".as('title_a),
+        $"b.title".as('title_b),
+        $"a.timestamp".as('timestamp_a),
+        $"b.timestamp".as('timestamp_b),
+        $"a.features".as('features_a),
+        $"b.features".as('features_b),
+        $"a.norm".as('norm_a),
+        $"b.norm".as('norm_b)
       )
       .map(r => {
-        val t1 = r.getAs[String]("title1")
-        val t2 = r.getAs[String]("title2")
-        val id1 = r.getAs[Long]("id1")
-        val id2 = r.getAs[Long]("id2")
-        val s1 = r.getAs[Vector]("vector1").toArray
-        val s2 = r.getAs[Vector]("vector2").toArray
+        val t1 = r.getAs[String]("title_a")
+        val t2 = r.getAs[String]("title_b")
+        val ts1 = r.getAs[Timestamp]("timestamp_a")
+        val ts2 = r.getAs[Timestamp]("timestamp_b")
+        val s1 = r.getAs[Seq[Double]]("features_a")
+        val s2 = r.getAs[Seq[Double]]("features_b")
+        val n1 = r.getAs[Double]("norm_a")
+        val n2 = r.getAs[Double]("norm_b")
 
-        val cs = dot(s1, s2) / (norm(s1) * norm(s2))
+        // compute cosine similarity between two features vectors
+        val cs = dot(s1, s2) / (n1 * n2)
         // return a new Row with cosine similarity appended at the end
         // and keep the smaller id before
-        if (id1 < id2) {
-          (id1, id2, t1, t2, s1, s2, cs)
-        }
-        else {
-          (id2, id1, t2, t1, s2, s1, cs)
-        }
+        (t1, ts1, t2, ts2, cs)
       })
-      .dropDuplicates("_1", "_2")
-      .select(
-        col("_3").as("title1"),
-        col("_4").as("title2"),
-        col("_5").as("s1"),
-        col("_6").as("s2"),
-        col("_7").as("cs")
+      .toDF(
+        "title_1",
+        "timestamp_1",
+        "title_2",
+        "timestamp_2",
+        "cosine_similarity"
       )
   }
 }
