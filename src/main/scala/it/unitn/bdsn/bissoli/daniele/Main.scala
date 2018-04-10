@@ -26,24 +26,34 @@ object Main extends SparkSessionWrapper {
     // retrieve the path of resources folder
     val resourcesDir = sys.env.getOrElse("SP_RES_DIR", "ciao")
 
-    val fp = s"$resourcesDir/NGC_4457.xml"
-//    val fp = s"$resourcesDir/small.xml"
+//    val fp = s"$resourcesDir/NGC_4457.xml"
+    val fp = s"$resourcesDir/small.xml"
     val df = extractPages(spark, fp)
     df.printSchema()
 
     // here you'll need to apply the preprocessing operations
-    val df2 = df.map(r => (
-      r.getAs[String]("title"),
-      r.getAs[Timestamp]("timestamp"),
-      Option(r.getAs[String]("text")).getOrElse("").split(" ")
-    )).toDF("title", "timestamp", "text")
+//    val df2 = df.map(r => (
+//      r.getAs[String]("title"),
+//      r.getAs[Timestamp]("timestamp"),
+//      Option(r.getAs[String]("text")).getOrElse("").split(" ")
+//    )).toDF("title", "timestamp", "text")
 
-//    df2.show(30)
-
-//    df.foreach((r) => { println(extractInfobox(r)) })
-//    println(PageAnalyzier.extractInfobox(df.head()))
+//    df2.show()
 
     // TODO:  SIMILARITY BETWEEN PAGES => check internal wikipedia links
+//    df.foreach((r) => { println(extractInfobox(r)) })
+//    println(PageAnalyzier.extractInfobox(df.head()))
+//    println(PageParser.extractInfobox(df.head().getAs[String]("text")))
+
+    /* Split is a pre-process needed for Word2Vec */
+    val df3 = df.map(r => (
+      r.getAs[String]("title"),
+      r.getAs[Timestamp]("timestamp"),
+      r.getAs[String]("text"),
+      PageParser.extractInfobox(r.getAs[String]("text"))._1.split(" ")
+    )).toDF("title", "timestamp", "text", "infobox")
+
+    df3.show()
 
     // Input data: Each row is a bag of words from a sentence or document.
 //    val documentDF = spark.createDataFrame(Seq(
@@ -56,13 +66,16 @@ object Main extends SparkSessionWrapper {
 //      .toDF("title", "ts","text")
 //      .withColumn("timestamp",to_utc_timestamp(col("ts"),TimeZone.getDefault.getID))
 
-    val cs = new CosineSimilarity("text", 256)
-    val result : DataFrame = cs.computeCS(df2)
+    val cs = new CosineSimilarity("infobox", 512)
+    val result : DataFrame = cs.computeCS(df3)
+//
+    result.write.csv(s"$resourcesDir/small")
+
 //    val cs = new CosineSimilarity("text", 16)
 //    val result : DataFrame = cs.computeCS(documentDF)
 
 //    result.explain()
-    result.show(50)
+//    result.show(50)
 
     spark.stop()
   }
