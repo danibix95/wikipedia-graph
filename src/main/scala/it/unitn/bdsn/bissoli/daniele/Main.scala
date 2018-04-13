@@ -1,12 +1,11 @@
 package it.unitn.bdsn.bissoli.daniele
 
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, Encoders, Row, SparkSession}
-
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import java.sql.Timestamp
 import java.util.TimeZone
 
-import scala.sys
+import scala.sys.env
 
 trait SparkSessionWrapper {
   // remove master if you want to execute this program in a cluster
@@ -24,10 +23,10 @@ object Main extends SparkSessionWrapper {
     import spark.implicits._
 
     // retrieve the path of resources folder
-    val resourcesDir = sys.env.getOrElse("SP_RES_DIR", "")
+    val resourcesDir = env.getOrElse("SP_RES_DIR", "")
 
-    val fp = s"$resourcesDir/NGC_4457.xml"
-//    val fp = s"$resourcesDir/small.xml"
+//    val fp = s"$resourcesDir/NGC_4457.xml"
+    val fp = s"$resourcesDir/med_small.xml"
     val df = extractPages(spark, fp)
 
     // here you'll need to apply the preprocessing operations
@@ -66,10 +65,10 @@ object Main extends SparkSessionWrapper {
 //      .toDF("title", "ts","text")
 //      .withColumn("timestamp",to_utc_timestamp(col("ts"),TimeZone.getDefault.getID))
 
-//    val cs = new CosineSimilarity("infobox", 512)
-//    val result : DataFrame = cs.computeCS(df3)
+    val cs = new CosineSimilarity("infobox", "links", 1024)
+    val result : DataFrame = cs.computeCS(df3)
 //
-//    result.write.csv(s"$resourcesDir/small")
+    result.write.mode(SaveMode.Overwrite).csv(s"$resourcesDir/result")
 
 //    val cs = new CosineSimilarity("text", 16)
 //    val result : DataFrame = cs.computeCS(documentDF)

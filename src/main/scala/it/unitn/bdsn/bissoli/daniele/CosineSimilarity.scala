@@ -2,14 +2,14 @@ package it.unitn.bdsn.bissoli.daniele
 
 import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.functions.col
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import java.sql.Timestamp
 
 import scala.math.{pow, sqrt}
 
-class CosineSimilarity(var inputCol: String, val vectorSize: Int) extends Serializable {
+class CosineSimilarity(var infoboxCol: String, var linksCol: String,
+                       val vectorSize: Int) extends Serializable {
   // extends Serializable => needed in order to get computeCS work from a class.
   // transform operations work only in objects or things that are Serializable
 
@@ -18,9 +18,15 @@ class CosineSimilarity(var inputCol: String, val vectorSize: Int) extends Serial
   private val spark = SparkSession.getActiveSession.get
   import spark.implicits._
 
-  private val word2Vec = new Word2Vec()
-    .setInputCol(inputCol)
-    .setOutputCol("vector")
+  private val infoboxW2V = new Word2Vec()
+    .setInputCol(infoboxCol)
+    .setOutputCol("infobox_vector")
+    .setVectorSize(vectorSize)
+    .setMinCount(0)
+
+  private val linksW2V = new Word2Vec()
+    .setInputCol(linksCol)
+    .setOutputCol("links_vector")
     .setVectorSize(vectorSize)
     .setMinCount(0)
 
@@ -44,13 +50,19 @@ class CosineSimilarity(var inputCol: String, val vectorSize: Int) extends Serial
     * for given dataframe containing Wikipedia pages representation.
     * */
   def computeCS(dataframe : DataFrame) : DataFrame = {
-    val features = word2Vec.fit(dataframe)
-      .transform(dataframe)
+    // compute feature vectors for both infobox and links columns
+    val infoboxVec = infoboxW2V.fit(dataframe).transform(dataframe)
+    val bothVec = linksW2V.fit(infoboxVec).transform(infoboxVec)
+
+    val features = bothVec
       .map(r => {
         val title = r.getAs[String]("title")
         val timestamp = r.getAs[Timestamp]("timestamp")
-        val features = r.getAs[Vector]("vector").toArray
+        val infobox_f = r.getAs[Vector]("infobox_vector").toArray
+        val links_f = r.getAs[Vector]("links_vector").toArray
 
+        // take the average of two vectors
+        val features = (infobox_f zip links_f) map { case (a, b) => (a + b) / 2 }
         // remove text and pre-compute features vectors norm
         (title, timestamp, features, norm(features))
       })

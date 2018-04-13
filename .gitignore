@@ -34,3 +34,4 @@ spark-warehouse
 src/main/resources/big.xml
 src/main/resources/med_small.xml
 src/main/resources/medium.xml
+src/main/resources/result
