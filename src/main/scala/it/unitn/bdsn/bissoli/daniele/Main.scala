@@ -24,36 +24,36 @@ object Main extends SparkSessionWrapper {
     import spark.implicits._
 
     // retrieve the path of resources folder
-    val resourcesDir = sys.env.getOrElse("SP_RES_DIR", "ciao")
+    val resourcesDir = sys.env.getOrElse("SP_RES_DIR", "")
 
-//    val fp = s"$resourcesDir/NGC_4457.xml"
-    val fp = s"$resourcesDir/small.xml"
+    val fp = s"$resourcesDir/NGC_4457.xml"
+//    val fp = s"$resourcesDir/small.xml"
     val df = extractPages(spark, fp)
-    df.printSchema()
 
     // here you'll need to apply the preprocessing operations
-//    val df2 = df.map(r => (
-//      r.getAs[String]("title"),
-//      r.getAs[Timestamp]("timestamp"),
-//      Option(r.getAs[String]("text")).getOrElse("").split(" ")
-//    )).toDF("title", "timestamp", "text")
+//    println(PageParser.extractFeatures(df.head().getAs[String]("text")).toString)
 
-//    df2.show()
-
-    // TODO:  SIMILARITY BETWEEN PAGES => check internal wikipedia links
-//    df.foreach((r) => { println(extractInfobox(r)) })
-//    println(PageAnalyzier.extractInfobox(df.head()))
-//    println(PageParser.extractInfobox(df.head().getAs[String]("text")))
-
-    /* Split is a pre-process needed for Word2Vec */
-    val df3 = df.map(r => (
-      r.getAs[String]("title"),
-      r.getAs[Timestamp]("timestamp"),
-      r.getAs[String]("text"),
-      PageParser.extractInfobox(r.getAs[String]("text"))._1.split(" ")
-    )).toDF("title", "timestamp", "text", "infobox")
+    /* Pre-processing of Wikipedia pages */
+    val df3 = df.map(r => {
+      val (infobox, linksContext) =
+        PageParser.extractFeatures(r.getAs[String]("text"))
+      // build new dataframe row
+      (
+        r.getAs[String]("title"),
+        r.getAs[Timestamp]("timestamp"),
+        infobox,
+        linksContext
+      )
+    }).toDF("title", "timestamp", "infobox", "links")
 
     df3.show()
+
+    // TODO: !!! split infobox extraction from links context extraction!!!
+    /* 2 approaches:
+      - split infobox vector from links vector and then combine obtained similarities in some way later
+      - average infobox and links vectors and then compute similarity
+        (caveaut => single sim, but all the pages without an infobox will have something in common (average with 0)
+    */
 
     // Input data: Each row is a bag of words from a sentence or document.
 //    val documentDF = spark.createDataFrame(Seq(
@@ -66,10 +66,10 @@ object Main extends SparkSessionWrapper {
 //      .toDF("title", "ts","text")
 //      .withColumn("timestamp",to_utc_timestamp(col("ts"),TimeZone.getDefault.getID))
 
-    val cs = new CosineSimilarity("infobox", 512)
-    val result : DataFrame = cs.computeCS(df3)
+//    val cs = new CosineSimilarity("infobox", 512)
+//    val result : DataFrame = cs.computeCS(df3)
 //
-    result.write.csv(s"$resourcesDir/small")
+//    result.write.csv(s"$resourcesDir/small")
 
 //    val cs = new CosineSimilarity("text", 16)
 //    val result : DataFrame = cs.computeCS(documentDF)
