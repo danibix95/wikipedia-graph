@@ -46,15 +46,17 @@ class CosineSimilarity(var infoboxCol: String, var linksCol: String,
     * */
   private def norm(v: Seq[Double]) : Double = sqrt(v.map(pow(_, 2)).sum)
 
+  private def computeFeaturesVectors(dataframe: DataFrame) : DataFrame = {
+    // compute feature vectors for both infobox and links columns
+    val infoboxVec = infoboxW2V.fit(dataframe).transform(dataframe)
+    linksW2V.fit(infoboxVec).transform(infoboxVec)
+  }
+
   /** Returns the cosine similarity of each pair of pages
     * for given dataframe containing Wikipedia pages representation.
     * */
   def computeCS(dataframe : DataFrame) : DataFrame = {
-    // compute feature vectors for both infobox and links columns
-    val infoboxVec = infoboxW2V.fit(dataframe).transform(dataframe)
-    val bothVec = linksW2V.fit(infoboxVec).transform(infoboxVec)
-
-    val features = bothVec
+    val features = computeFeaturesVectors(dataframe)
       .map(r => {
         val title = r.getAs[String]("title")
         val timestamp = r.getAs[Timestamp]("timestamp")

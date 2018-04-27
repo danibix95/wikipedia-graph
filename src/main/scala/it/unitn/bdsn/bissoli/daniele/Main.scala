@@ -12,6 +12,7 @@ trait SparkSessionWrapper {
   lazy val spark: SparkSession = {
     SparkSession
       .builder()
+      /*.master("yarn")*/
       .master("local[4]")
       .appName("wikipediaGraph")
       .getOrCreate()
@@ -24,9 +25,10 @@ object Main extends SparkSessionWrapper {
 
     // retrieve the path of resources folder
     val resourcesDir = env.getOrElse("SP_RES_DIR", "")
+//    val resourcesDir = "hdfs://192.168.12.41:9000/"
 
-//    val fp = s"$resourcesDir/NGC_4457.xml"
-    val fp = s"$resourcesDir/med_small.xml"
+    val fp = s"$resourcesDir/NGC_4457.xml"
+//    val fp = s"$resourcesDir/medium.xml"
     val df = extractPages(spark, fp)
 
     // here you'll need to apply the preprocessing operations
@@ -45,7 +47,17 @@ object Main extends SparkSessionWrapper {
       )
     }).toDF("title", "timestamp", "infobox", "links")
 
-    df3.show()
+//    df3.where($"title" === "Sombrero Galaxy").show(800)
+
+    df3.map(r => {
+      (
+        r.getAs[String]("title"),
+        r.getAs[Timestamp]("timestamp"),
+        r.getAs[Seq[String]]("infobox").mkString("~"),
+        r.getAs[Seq[String]]("links").mkString("~")
+      )
+    }).toDF("title", "timestamp", "infobox", "links")
+      .write.mode(SaveMode.Overwrite).csv(s"$resourcesDir/intermediate")
 
     // TODO: !!! split infobox extraction from links context extraction!!!
     /* 2 approaches:
@@ -67,7 +79,7 @@ object Main extends SparkSessionWrapper {
 
     val cs = new CosineSimilarity("infobox", "links", 1024)
     val result : DataFrame = cs.computeCS(df3)
-//
+
     result.write.mode(SaveMode.Overwrite).csv(s"$resourcesDir/result")
 
 //    val cs = new CosineSimilarity("text", 16)
@@ -110,6 +122,6 @@ object Main extends SparkSessionWrapper {
         col("title"),
         col("timestamp"),
         col("tmp._2").alias("text")
-      )
+      ).na.drop(Seq("text"))
   }
 }

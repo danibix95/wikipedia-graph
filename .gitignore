@@ -30,8 +30,9 @@ project/plugins/project/
 ### Spark folders
 spark-warehouse
 
-# Too big resources
-src/main/resources/big.xml
-src/main/resources/med_small.xml
-src/main/resources/medium.xml
+# Sample resources
+!src/main/resources/NGC_4457.xml
+src/main/resources/*.xml
 src/main/resources/result
+src/main/resources/data
+src/main/resources/intermediate

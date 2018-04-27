@@ -24,6 +24,9 @@ object PageParser {
   private val kv = P("|" ~ key ~ "=" ~ value)
 
   // infobox
+  // Note: {{Infobox ... was a structure introduced after some time
+  // when infoboxes didn't have a standard, so some pages will result having no
+  // infobox even though it has something that resemble it
   private val content = P(("Infobox" ~ category).! ~ kv.rep(1))
   private val infobox = P("{{" ~ content ~ "}}".?)
 
