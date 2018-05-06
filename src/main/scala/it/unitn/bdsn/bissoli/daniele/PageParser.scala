@@ -1,99 +1,117 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import fastparse.WhitespaceApi
+import org.parboiled2._
+import scala.util.Success
+import scala.util.matching.Regex
 
 import scala.math.{max, min}
 
-object PageParser {
-  private val White = WhitespaceApi.Wrapper{
-    import fastparse.all._
-    NoTrace((" " | "\n" | "\t").rep)
+/** A parser for Wikipedia Infobox structure.
+  *
+  * @constructor create a new parser with given input
+  * @param input the parser input
+  * */
+class Infobox(val input: ParserInput) extends Parser {
+  def InputLine = rule { "{{" ~ White ~ capture(Content) ~ White ~ "}}" }
+  def Content : Rule0 = rule {
+    oneOrMore("{{" ~ White ~ Content ~ White ~ "}}" | Data)
   }
-  import fastparse.noApi._
-  import White._
+  def Data = rule { noneOf("{}") }
+  def White = rule { zeroOrMore(' ') }
+}
 
-  // Grammar for Wikipedia infobox
-  // terminals
-  private val alphaNum = (('a' to 'z') ++ ('A' to 'Z') ++ (0 to 9)).mkString
-  private val keyAlpha = alphaNum ++ Seq('_', '-', ' ').mkString
-  // property
-  private val key : P[String] = P(CharsWhileIn(keyAlpha).!)
-  private val value : P[String] = P(CharsWhile(_ != '\n').!)
-  private val category : P[String] = P(CharsWhileIn(alphaNum).!)
-  // properties
-  private val kv = P("|" ~ key ~ "=" ~ value)
+class Link(val input: ParserInput) extends Parser {
+  def InputLine = rule { "[[" ~ White ~ Content ~ White ~ "]]"}
+  def Content = rule {
+    oneOrMore(White ~ capture(Data) ~ White).separatedBy("|") ~> (_.head)
+  }
+  def Data = rule { oneOrMore(noneOf("|]")) }
+  def White = rule { zeroOrMore(' ') }
+}
 
-  // infobox
-  // Note: {{Infobox ... was a structure introduced after some time
-  // when infoboxes didn't have a standard, so some pages will result having no
-  // infobox even though it has something that resemble it
-  private val content = P(("Infobox" ~ category).! ~ kv.rep(1))
-  private val infobox = P("{{" ~ content ~ "}}".?)
-
-  // Regex for text filtering
-  private val htmlStripper = """<.*?>""".r
-  private val multiSpaceStripper = """ +""".r
+object PageParser {
   private val newLineStripper = """\n+""".r
+  // This regex is used to recognize Wikipedia Links
+  private val linkRecognizer = """\[\[[\w\d -\:\/\.\(\)\|\&\#]*\]\]""".r
 
-  private def extractInfobox(page : String) : (String, Int) = {
-    /* NOTE: with this parser I'm assuming that each line
-      of Infobox finishes with a line break */
-//    val (title, properties)
-    infobox.parse(page) match {
-      /* if an infobox exists, then elaborate given result */
-      case Parsed.Success(text, index) => {
-        val (title, properties) = text
-        // Return a final string that represents a infobox, after stripping html tags
-        val infoboxContent = title ++ " " ++ properties.flatMap(prop =>
-          Seq(prop._1, prop._2)
-        ).mkString(" ")
+  /** Returns a list of keys and values extracted from the infobox
+    * that might be found in the given page, plus the last position
+    * where the parser stopped.
+    * */
+  private def extractInfobox(page : String) : (Seq[String], Int) = {
+    /* NOTE: the parser rely on the assumption that the first structure
+       in the wikipedia page is the infobox. Sometimes can happen that
+       different structures (such as disambiguation link) are placed
+       above the infobox. Therefore it is not possible to effectively
+       parse that page.
+    */
+    val parser = new Infobox(page)
 
-        (multiSpaceStripper.replaceAllIn(infoboxContent, " "), index)
-      }
-      /* In case there's no infobox, just return empty string */
-      case _ => ("", 0)
+    parser.InputLine.run() match {
+      /* In case of parsing success, split the infobox into its attributes,
+        then separate them into key value pairs removing leading and
+        trailing spaces and flattening everything in a single list */
+      case Success(infobox) =>
+        (
+          infobox.split("""\n *\|""").flatMap(_.split("=").map(_.trim)).toSeq,
+          parser.cursor
+        )
+      case _ => (Seq(""), 0)
     }
+  }
+
+  private def getNeighbours(page: String) : Seq[String] = {
+    linkRecognizer.findAllIn(page)
+      .map(new Link(_).InputLine.run() match {
+        case Success(link) => link
+        case _ => ""
+      }
+    ).toList
   }
 
   /** Returns a list of sequence of tokens that represent the link context
     * (+-10 words from link) extracted from the text of given Wikipedia page.
     * */
-  private def extractLinks(page: String) : Seq[String] = {
-    // This regex is used to recognize Wikipedia Links
-    val linkRecognizer = """\[\[[\w\d -\:\/\.\(\)\|\&\#]*\]\]""".r
-    /* First of all, sorround links with a sequence of char that can't be found in the text
-    * then split according to it, keeping links as single token and removing unuseful whitespaces
+  private def extractLinksContext(page: String) : Seq[String] = {
+    /* First of all, surround links with a sequence of char that can't be found in the text
+    * then split according to it, keeping links as single token and removing useless whitespaces
     * next split strings that are not link into single tokens
     * eventually pack tokens with corresponding index and collect the context around link tokes
     * flatting all the context into a single sequence of tokens
     * */
     val tokens = newLineStripper
-      .replaceAllIn(linkRecognizer.replaceAllIn(page, "ééé" + _ + "ééé"), "")
+      .replaceAllIn(
+        linkRecognizer.replaceAllIn(
+          page,
+          (matchedString) =>
+            "ééé" ++ Regex.quoteReplacement(matchedString.toString) ++ "ééé"
+        ),
+        ""
+      )
       .split("ééé")
-      .map(_.trim)
       .flatMap(token => {
         if (token.startsWith("[["))
           Seq(token)
         else
-          token.split(" ").toSeq
+          token.split(" ")
       })
+      .map(_.trim)
       .toSeq
 
-    tokens.zipWithIndex.map {
+    tokens.zipWithIndex.flatMap {
       case (token, index) =>
         if (token.startsWith("[["))
           tokens.slice(max(0, index - 10), min(index + 10, tokens.length))
         else
           Seq()
-    }.filter(_.nonEmpty).flatten
+    }.map(_.trim).filter(_.nonEmpty)
   }
 
-  def extractFeatures(page: String) : (Seq[String], Seq[String]) = {
-    val preProcessedPage = htmlStripper.replaceAllIn(page, "")
+  def extractFeatures(page: String) : (Seq[String], Seq[String], Seq[String]) = {
+    val (infoboxContent, lastPos) = extractInfobox(page)
+    val neighbours = getNeighbours(page)
+    val linksContext = extractLinksContext(page.slice(lastPos, page.length))
 
-    val (infoboxContent, lastPos) = extractInfobox(preProcessedPage)
-    val links = extractLinks(preProcessedPage.slice(lastPos, preProcessedPage.length))
-
-    (infoboxContent.split(" "), links)
+    (infoboxContent, neighbours, linksContext)
   }
 }

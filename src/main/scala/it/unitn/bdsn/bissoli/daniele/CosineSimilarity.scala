@@ -3,13 +3,15 @@ package it.unitn.bdsn.bissoli.daniele
 import org.apache.spark.ml.feature.Word2Vec
 import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.functions.udf
 
 import java.sql.Timestamp
 
 import scala.math.{pow, sqrt}
 
 class CosineSimilarity(var infoboxCol: String, var linksCol: String,
-                       val vectorSize: Int) extends Serializable {
+                       val neighboursCol: String, val vectorSize: Int)
+                      extends Serializable {
   // extends Serializable => needed in order to get computeCS work from a class.
   // transform operations work only in objects or things that are Serializable
 
@@ -62,13 +64,15 @@ class CosineSimilarity(var infoboxCol: String, var linksCol: String,
         val timestamp = r.getAs[Timestamp]("timestamp")
         val infobox_f = r.getAs[Vector]("infobox_vector").toArray
         val links_f = r.getAs[Vector]("links_vector").toArray
-
         // take the average of two vectors
         val features = (infobox_f zip links_f) map { case (a, b) => (a + b) / 2 }
+
+        // take also the neighbours column
+        val neighbours = r.getAs[Seq[String]](neighboursCol)
         // remove text and pre-compute features vectors norm
-        (title, timestamp, features, norm(features))
+        (title, timestamp, features, norm(features), neighbours)
       })
-      .toDF("title", "timestamp", "features", "norm")
+      .toDF("title", "timestamp", "features", "norm", "neighbours")
 
     /* idea behind this step: first create the pairs of all possible
        different pages, then compute cosine similarity and eventually
@@ -80,11 +84,16 @@ class CosineSimilarity(var infoboxCol: String, var linksCol: String,
        have a timestamp greater than mine
        (so I won't create duplicated pairs nor pairs of same page)
     * */
+    val isLinked = udf {
+      (links: Seq[String], title: String) => links.contains(title)
+    }
+
     features.as("a")
       /* create pairs of pages */
       .join(
         features.as("b"),
-        $"a.timestamp" > $"b.timestamp"
+        $"a.timestamp" < $"b.timestamp" && $"a.title" =!= $"b.title"
+          && isLinked($"a.neighbours", $"b.title")
       )
       .select(
         $"a.title".as('title_a),

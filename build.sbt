@@ -11,7 +11,7 @@ libraryDependencies ++=
     "org.apache.spark" %% "spark-sql" % sparkVer,
     "org.apache.spark" %% "spark-mllib" % sparkVer,
     "com.databricks" %% "spark-xml" % "0.4.1",
-    "com.lihaoyi" %% "fastparse" % "1.0.0"
+    "org.parboiled" %% "parboiled" % "2.1.4"
   )
 
 artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
