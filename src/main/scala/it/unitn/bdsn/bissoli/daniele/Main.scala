@@ -1,7 +1,10 @@
 package it.unitn.bdsn.bissoli.daniele
 
+
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
+
+import java.io.File
 import java.sql.Timestamp
 import java.util.TimeZone
 
@@ -20,19 +23,38 @@ trait SparkSessionWrapper {
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
-    import spark.implicits._
 
     // retrieve the path of resources folder
     val resourcesDir = env.getOrElse("SP_RES_DIR", "")
 
-    val fp = s"$resourcesDir/NGC_4457_neighbours.xml"
-//    val fp = s"$resourcesDir/NGC_4457.xml"
-    val df = extractPages(spark, fp)
+    //    val fp = s"$resourcesDir/test.xml"
+//    val fp = s"$resourcesDir/NGC_4457_neighbours.xml"
+    //    val fp = s"$resourcesDir/NGC_4457.xml"
+    intermediate(resourcesDir, "t_tiny.xml")
+
+//    println(getListOfSubDirectories(s"$resourcesDir/preprocessed").mkString("\n"))
+//    val folders : Seq[String] = getListOfSubDirectories(s"$resourcesDir/preprocessed").take(4)
+//    folders.map((l: String) => spark.read.parquet(s"$resourcesDir/preprocessed/$l"))
+//           .foreach(_.show(5))
+
+
+
+//    val cs = new CosineSimilarity("infobox", "links", "neighbours", 1024)
+//    val result : DataFrame = cs.computeCS(df3)
+//    result.explain()
+
+    spark.stop()
+  }
+
+  def intermediate(path: String, resource: String) : Unit = {
+    import spark.implicits._
+
+    val df = extractPages(s"$path/$resource")
 
     /* Pre-processing of Wikipedia pages */
-    val df3 = df.map(r => {
+    val preprocessedDF = df.map(r => {
       val (infobox, neighbours, linksContext) =
-        PageParser.extractFeatures(r.getAs[String]("text"))
+        PagePreprocessor.extractFeatures(r.getAs[String]("text"))
       // build new dataframe row
       (
         r.getAs[String]("title"),
@@ -43,28 +65,23 @@ object Main extends SparkSessionWrapper {
       )
     }).toDF("title", "timestamp", "infobox", "neighbours", "links")
 
-    df3.map(r => {
-      (
-        r.getAs[String]("title"),
-        r.getAs[Timestamp]("timestamp"),
-        r.getAs[Seq[String]]("infobox").mkString("~"),
-        r.getAs[Seq[String]]("neighbours").mkString("~"),
-        r.getAs[Seq[String]]("links").mkString("~")
-      )
-    }).toDF("title", "timestamp", "infobox", "neighbours", "links")
-      .write.mode(SaveMode.Overwrite).csv(s"$resourcesDir/intermediate")
+    PagePreprocessor
+      .computeFeaturesVectors(preprocessedDF, "infobox", "links", 300)
+      /* copy the title column since partitioning remove the column */
+      .withColumn("to_split", $"title")
+      .write.partitionBy("to_split")
+      .mode(SaveMode.Overwrite).parquet(s"$path/preprocessed")
 
-    df3.show()
-    df3.printSchema()
+    // remove from memory previous dataframes
+    df.unpersist()
+    preprocessedDF.unpersist()
+  }
 
-    val cs = new CosineSimilarity("infobox", "links", "neighbours", 1024)
-    val result : DataFrame = cs.computeCS(df3)
-
-    result.write.mode(SaveMode.Overwrite).csv(s"$resourcesDir/result")
-
-    result.explain()
-
-    spark.stop()
+  def getListOfSubDirectories(directoryName: String): Array[String] = {
+    new File(directoryName)
+      .listFiles
+      .filter(_.isDirectory)
+      .map(_.getName/*.stripPrefix("title=")*/)
   }
 
   /** Returns a Dataframe representing all Wikipedia pages
@@ -72,7 +89,7 @@ object Main extends SparkSessionWrapper {
     * It expect an input file complaint to XML schema provided
     * here: https://www.mediawiki.org/xml/export-0.8.xsd
     * */
-  def extractPages(spark : SparkSession, filePath : String) : DataFrame = {
+  def extractPages(filePath : String) : DataFrame = {
     val zip = udf((xs: Seq[String], ys: Seq[String]) => xs.zip(ys))
 
     spark.read

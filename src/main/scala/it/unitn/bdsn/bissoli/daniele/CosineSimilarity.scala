@@ -1,7 +1,5 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import org.apache.spark.ml.feature.Word2Vec
-import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.udf
 
@@ -9,9 +7,7 @@ import java.sql.Timestamp
 
 import scala.math.{pow, sqrt}
 
-class CosineSimilarity(var infoboxCol: String, var linksCol: String,
-                       val neighboursCol: String, val vectorSize: Int)
-                      extends Serializable {
+class CosineSimilarity extends Serializable {
   // extends Serializable => needed in order to get computeCS work from a class.
   // transform operations work only in objects or things that are Serializable
 
@@ -19,18 +15,6 @@ class CosineSimilarity(var infoboxCol: String, var linksCol: String,
   // (used to recognize $ as col and for default encoders)
   private val spark = SparkSession.getActiveSession.get
   import spark.implicits._
-
-  private val infoboxW2V = new Word2Vec()
-    .setInputCol(infoboxCol)
-    .setOutputCol("infobox_vector")
-    .setVectorSize(vectorSize)
-    .setMinCount(0)
-
-  private val linksW2V = new Word2Vec()
-    .setInputCol(linksCol)
-    .setOutputCol("links_vector")
-    .setVectorSize(vectorSize)
-    .setMinCount(0)
 
   /** Returns the dot product of given two arrays.
     * */
@@ -48,31 +32,25 @@ class CosineSimilarity(var infoboxCol: String, var linksCol: String,
     * */
   private def norm(v: Seq[Double]) : Double = sqrt(v.map(pow(_, 2)).sum)
 
-  private def computeFeaturesVectors(dataframe: DataFrame) : DataFrame = {
-    // compute feature vectors for both infobox and links columns
-    val infoboxVec = infoboxW2V.fit(dataframe).transform(dataframe)
-    linksW2V.fit(infoboxVec).transform(infoboxVec)
-  }
-
   /** Returns the cosine similarity of each pair of pages
     * for given dataframe containing Wikipedia pages representation.
     * */
   def computeCS(dataframe : DataFrame) : DataFrame = {
-    val features = computeFeaturesVectors(dataframe)
-      .map(r => {
-        val title = r.getAs[String]("title")
-        val timestamp = r.getAs[Timestamp]("timestamp")
-        val infobox_f = r.getAs[Vector]("infobox_vector").toArray
-        val links_f = r.getAs[Vector]("links_vector").toArray
-        // take the average of two vectors
-        val features = (infobox_f zip links_f) map { case (a, b) => (a + b) / 2 }
-
-        // take also the neighbours column
-        val neighbours = r.getAs[Seq[String]](neighboursCol)
-        // remove text and pre-compute features vectors norm
-        (title, timestamp, features, norm(features), neighbours)
-      })
-      .toDF("title", "timestamp", "features", "norm", "neighbours")
+    val features = dataframe
+//      .map(r => {
+//        val title = r.getAs[String]("title")
+//        val timestamp = r.getAs[Timestamp]("timestamp")
+//        val infobox_f = r.getAs[Vector]("infobox_vector").toArray
+//        val links_f = r.getAs[Vector]("links_vector").toArray
+//        // take the average of two vectors
+////        val features = (infobox_f zip links_f) map { case (a, b) => (a + b) / 2 }
+//
+//        // take also the neighbours column
+//        val neighbours = r.getAs[Seq[String]](neighboursCol)
+//        // remove text and pre-compute features vectors norm
+//        (title, timestamp, features, norm(features), neighbours)
+//      })
+//      .toDF("title", "timestamp", "features", "norm", "neighbours")
 
     /* idea behind this step: first create the pairs of all possible
        different pages, then compute cosine similarity and eventually
