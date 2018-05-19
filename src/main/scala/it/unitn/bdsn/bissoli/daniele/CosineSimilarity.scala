@@ -5,8 +5,6 @@ import org.apache.spark.sql.functions.udf
 
 import java.sql.Timestamp
 
-import scala.math.{pow, sqrt}
-
 class CosineSimilarity extends Serializable {
   // extends Serializable => needed in order to get computeCS work from a class.
   // transform operations work only in objects or things that are Serializable
@@ -28,60 +26,32 @@ class CosineSimilarity extends Serializable {
     ((v1 zip v2) map { case (a, b) => a * b }).sum
   }
 
-  /** Returns the euclidean norm of given array.
-    * */
-  private def norm(v: Seq[Double]) : Double = sqrt(v.map(pow(_, 2)).sum)
-
-  /** Returns the cosine similarity of each pair of pages
-    * for given dataframe containing Wikipedia pages representation.
+  /** Returns a dataframe with the cosine similarity of each pair of pages
+    * for given a dataframe containing Wikipedia pages representation.
     * */
   def computeCS(dataframe : DataFrame) : DataFrame = {
-    val features = dataframe
-//      .map(r => {
-//        val title = r.getAs[String]("title")
-//        val timestamp = r.getAs[Timestamp]("timestamp")
-//        val infobox_f = r.getAs[Vector]("infobox_vector").toArray
-//        val links_f = r.getAs[Vector]("links_vector").toArray
-//        // take the average of two vectors
-////        val features = (infobox_f zip links_f) map { case (a, b) => (a + b) / 2 }
-//
-//        // take also the neighbours column
-//        val neighbours = r.getAs[Seq[String]](neighboursCol)
-//        // remove text and pre-compute features vectors norm
-//        (title, timestamp, features, norm(features), neighbours)
-//      })
-//      .toDF("title", "timestamp", "features", "norm", "neighbours")
-
-    /* idea behind this step: first create the pairs of all possible
-       different pages, then compute cosine similarity and eventually
-       discards rows which are duplicates
-       (is it possible to avoid computing them?)
-
-       I can exploit the fact that pages have a timestamp,
-       therefore I can create pairs only with pages that
-       have a timestamp greater than mine
-       (so I won't create duplicated pairs nor pairs of same page)
-    * */
+    // UDF function to check if the title of second page
+    // is contained in one of the links of the first one
     val isLinked = udf {
       (links: Seq[String], title: String) => links.contains(title)
     }
 
-    features.as("a")
-      /* create pairs of pages */
+    // being linked (A -> B) means that the other page
+    // exited before me (no need of timestamp check)
+    dataframe.as("A")
       .join(
-        features.as("b"),
-        $"a.timestamp" < $"b.timestamp" && $"a.title" =!= $"b.title"
-          && isLinked($"a.neighbours", $"b.title")
+        dataframe.as("B"),
+        $"A.title" =!= $"B.title" && isLinked($"A.neighbours", $"B.title")
       )
       .select(
-        $"a.title".as('title_a),
-        $"b.title".as('title_b),
-        $"a.timestamp".as('timestamp_a),
-        $"b.timestamp".as('timestamp_b),
-        $"a.features".as('features_a),
-        $"b.features".as('features_b),
-        $"a.norm".as('norm_a),
-        $"b.norm".as('norm_b)
+        $"A.title".as('title_a),
+        $"B.title".as('title_b),
+        $"A.timestamp".as('timestamp_a),
+        $"B.timestamp".as('timestamp_b),
+        $"A.features".as('features_a),
+        $"B.features".as('features_b),
+        $"A.norm".as('norm_a),
+        $"B.norm".as('norm_b)
       )
       .map(r => {
         val t1 = r.getAs[String]("title_a")
@@ -96,7 +66,6 @@ class CosineSimilarity extends Serializable {
         // compute cosine similarity between two features vectors
         val cs = dot(s1, s2) / (n1 * n2)
         // return a new Row with cosine similarity appended at the end
-        // and keep the smaller id before
         (t1, ts1, t2, ts2, cs)
       })
       .toDF(
