@@ -1,14 +1,15 @@
 package it.unitn.bdsn.bissoli.daniele
 
-
+import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession, Row}
 
 import java.io.File
 import java.sql.Timestamp
 import java.util.TimeZone
 
 import scala.sys.env
+import scala.util.{Success, Try}
 
 trait SparkSessionWrapper {
   // remove master if you want to execute this program in a cluster
@@ -23,25 +24,20 @@ trait SparkSessionWrapper {
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
-
+    import spark.implicits._
     // retrieve the path of resources folder
     val resourcesDir = env.getOrElse("SP_RES_DIR", "")
 
     //    val fp = s"$resourcesDir/test.xml"
 //    val fp = s"$resourcesDir/NGC_4457_neighbours.xml"
     //    val fp = s"$resourcesDir/NGC_4457.xml"
-    intermediate(resourcesDir, "t_tiny.xml")
+    intermediate(resourcesDir, "v_small.xml")
 
-//    println(getListOfSubDirectories(s"$resourcesDir/preprocessed").mkString("\n"))
-//    val folders : Seq[String] = getListOfSubDirectories(s"$resourcesDir/preprocessed").take(4)
-//    folders.map((l: String) => spark.read.parquet(s"$resourcesDir/preprocessed/$l"))
-//           .foreach(_.show(5))
+    similarity(resourcesDir)
 
-
-
-//    val cs = new CosineSimilarity("infobox", "links", "neighbours", 1024)
-//    val result : DataFrame = cs.computeCS(df3)
-//    result.explain()
+    val folders : Seq[String] = getListOfSubDirectories(s"$resourcesDir/cs")
+    folders.map((l: String) => spark.read.parquet(s"$resourcesDir/cs/$l"))
+      .foreach(_.show(150))
 
     spark.stop()
   }
@@ -82,6 +78,56 @@ object Main extends SparkSessionWrapper {
       .listFiles
       .filter(_.isDirectory)
       .map(_.getName/*.stripPrefix("title=")*/)
+  }
+
+  def similarity(path: String): Unit = {
+    import spark.implicits._
+
+    val linksFlatten = udf {
+      links: Seq[Seq[String]] => links.map(_.toSet).reduce((a, b) => a | b).toSeq
+    }
+
+    val folders : Seq[String] = getListOfSubDirectories(s"$path/preprocessed")
+    folders.map((l: String) => spark.read.parquet(s"$path/preprocessed/$l"))
+      .foreach((df : DataFrame) => {
+        val tmpNeighbours : Row = df.groupBy("title")
+          .agg(collect_set("neighbours").alias("tmp"))
+          .withColumn("all_neighbours", linksFlatten($"tmp"))
+          .select("title", "all_neighbours")
+          // taking the first row of resulting dataframe is correct
+          // since each input dataframe was built to contain a single page
+          .take(1)(0)
+
+        val tmpDFlist = tmpNeighbours.getAs[Seq[String]]("all_neighbours")
+          .map(l => Try(spark.read.parquet(s"$path/preprocessed/to_split=$l")))
+          /* Note: this collect is of Scala collections, not Spark SQL */
+          .collect { case Success(readDF) => readDF }
+
+        // if there are more than 2 non-empty dataframe
+        // then collapse into a single one
+        val neighbours : DataFrame = {
+          if (tmpDFlist.count(_.count() > 1) > 1) {
+            tmpDFlist.reduceLeft(_.union(_)).distinct()
+          }
+          else {
+            Try(tmpDFlist.filter(_.count() > 1).head) match {
+              /* return the only dataframe in the list */
+              case Success(first) => first
+              /* otherwise return an empty dataframe */
+              case _ => Seq.empty[(String, Timestamp, Vector, Double, Seq[String])]
+                .toDF("title", "timestamp", "features", "norm", "neighbours")
+            }
+          }
+        }
+
+        val pageTitle = tmpNeighbours.getAs[String]("title")
+          .stripPrefix("to_split=")
+
+        CosineSimilarity.computeCS(df, neighbours)
+          .write.mode(SaveMode.Overwrite).parquet(s"$path/cs/$pageTitle")
+
+        neighbours.unpersist()
+      })
   }
 
   /** Returns a Dataframe representing all Wikipedia pages

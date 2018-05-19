@@ -1,11 +1,12 @@
 package it.unitn.bdsn.bissoli.daniele
 
+import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.udf
 
 import java.sql.Timestamp
 
-class CosineSimilarity extends Serializable {
+object CosineSimilarity extends Serializable {
   // extends Serializable => needed in order to get computeCS work from a class.
   // transform operations work only in objects or things that are Serializable
 
@@ -26,10 +27,10 @@ class CosineSimilarity extends Serializable {
     ((v1 zip v2) map { case (a, b) => a * b }).sum
   }
 
-  /** Returns a dataframe with the cosine similarity of each pair of pages
-    * for given a dataframe containing Wikipedia pages representation.
+  /** Returns a DataFrame with the cosine similarity of each pair of pages
+    * given in input as DataFrame containing Wikipedia pages representation.
     * */
-  def computeCS(dataframe : DataFrame) : DataFrame = {
+  def computeCS(df1 : DataFrame, df2 : DataFrame) : DataFrame = {
     // UDF function to check if the title of second page
     // is contained in one of the links of the first one
     val isLinked = udf {
@@ -37,12 +38,9 @@ class CosineSimilarity extends Serializable {
     }
 
     // being linked (A -> B) means that the other page
-    // exited before me (no need of timestamp check)
-    dataframe.as("A")
-      .join(
-        dataframe.as("B"),
-        $"A.title" =!= $"B.title" && isLinked($"A.neighbours", $"B.title")
-      )
+    // exited before me (no need of timestamp check
+    // and no need of different title check - no more all pairs)
+    df1.as("A").join(df2.as("B"), isLinked($"A.neighbours", $"B.title"))
       .select(
         $"A.title".as('title_a),
         $"B.title".as('title_b),
@@ -58,8 +56,8 @@ class CosineSimilarity extends Serializable {
         val t2 = r.getAs[String]("title_b")
         val ts1 = r.getAs[Timestamp]("timestamp_a")
         val ts2 = r.getAs[Timestamp]("timestamp_b")
-        val s1 = r.getAs[Seq[Double]]("features_a")
-        val s2 = r.getAs[Seq[Double]]("features_b")
+        val s1 = r.getAs[Vector]("features_a").toArray
+        val s2 = r.getAs[Vector]("features_b").toArray
         val n1 = r.getAs[Double]("norm_a")
         val n2 = r.getAs[Double]("norm_b")
 
