@@ -36,3 +36,16 @@ src/main/resources/*.xml
 src/main/resources/result
 src/main/resources/data
 src/main/resources/intermediate
+
+# NodeJS
+node_modules/
+.npm
+logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+*.seed
+*.pid.lock
+.env
+package-lock.json

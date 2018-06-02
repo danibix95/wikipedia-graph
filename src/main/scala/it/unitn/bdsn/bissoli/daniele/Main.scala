@@ -28,15 +28,21 @@ object Main extends SparkSessionWrapper {
     // retrieve the path of resources folder
     val resourcesDir = env.getOrElse("SP_RES_DIR", "")
 
-    //    val fp = s"$resourcesDir/test.xml"
-//    val fp = s"$resourcesDir/NGC_4457_neighbours.xml"
-    //    val fp = s"$resourcesDir/NGC_4457.xml"
-    intermediate(resourcesDir, "v_small.xml")
+    // TODO: find a way to load (in memory) the data coming from a Wikipedia dump!
+
+    val resource = "test.xml"
+//    val resource = "huge.xml"
+//    val resource = "NGC_4457_neighbours.xml"
+//        val resource = "v_small.xml"
+    intermediate(resourcesDir, resource)
 
     similarity(resourcesDir)
 
-    val folders : Seq[String] = getListOfSubDirectories(s"$resourcesDir/cs")
-    folders.map((l: String) => spark.read.parquet(s"$resourcesDir/cs/$l"))
+    val folders : Seq[String] =
+      getListOfSubDirectories(s"$resourcesDir/relationships")
+    folders.map((l: String) =>
+        spark.read.csv(s"$resourcesDir/relationships/$l")
+      )
       .foreach(_.show(150))
 
     spark.stop()
@@ -77,7 +83,7 @@ object Main extends SparkSessionWrapper {
     new File(directoryName)
       .listFiles
       .filter(_.isDirectory)
-      .map(_.getName/*.stripPrefix("title=")*/)
+      .map(_.getName)
   }
 
   def similarity(path: String): Unit = {
@@ -122,9 +128,10 @@ object Main extends SparkSessionWrapper {
 
         val pageTitle = tmpNeighbours.getAs[String]("title")
           .stripPrefix("to_split=")
+          .replaceAll("\\s", "")
 
         CosineSimilarity.computeCS(df, neighbours)
-          .write.mode(SaveMode.Overwrite).parquet(s"$path/cs/$pageTitle")
+          .write.mode(SaveMode.Overwrite).csv(raw"$path/relationships/$pageTitle")
 
         neighbours.unpersist()
       })

@@ -1,0 +1,29 @@
+{
+  "name": "wikipedia-graph",
+  "version": "0.0.1",
+  "description": "Data visualization module of wikipedia-graph project",
+  "main": "index.js",
+  "scripts": {
+    "load": "node loadData.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com/danibix95/wikipedia-graph.git"
+  },
+  "keywords": [
+    "Big Data",
+    "Data Visualization"
+  ],
+  "author": "Daniele Bissoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danibix95/wikipedia-graph/issues"
+  },
+  "homepage": "https://github.com/danibix95/wikipedia-graph#readme",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "neo4j-driver": "^1.6.1"
+  }
+}

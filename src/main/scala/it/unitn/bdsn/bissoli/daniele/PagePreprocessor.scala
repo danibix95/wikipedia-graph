@@ -145,7 +145,7 @@ object PagePreprocessor {
     val tmpDf = linksW2V.fit(infoboxVec).transform(infoboxVec)
 
     // merge together the two generated features vector
-    new VectorAssembler()
+    val preprocessedData = new VectorAssembler()
       .setInputCols(Array("infobox_vector", "links_vector"))
       .setOutputCol("features")
       .transform(tmpDf)
@@ -160,5 +160,12 @@ object PagePreprocessor {
         (title, timestamp, features, Vectors.norm(features, 2), neighbours)
       })
       .toDF("title", "timestamp", "features", "norm", "neighbours")
+
+    // remove from memory previous DataFrames
+    infoboxVec.unpersist()
+    tmpDf.unpersist()
+
+    // return final result
+    preprocessedData
   }
 }
