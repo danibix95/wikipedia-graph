@@ -38,9 +38,9 @@ object CosineSimilarity extends Serializable {
     }
 
     // being linked (A -> B) means that the other page
-    // exited before me (no need of timestamp check
-    // and no need of different title check - no more all pairs)
-    df1.as("A").join(df2.as("B"), isLinked($"A.neighbours", $"B.title"))
+    // exited before me (no need of timestamp check - no more all pairs)
+    df1.as("A").join(df2.as("B"),
+      $"A.title" =!= $"B.title" && isLinked($"A.neighbours", $"B.title"))
       .select(
         $"A.title".as('title_a),
         $"B.title".as('title_b),
