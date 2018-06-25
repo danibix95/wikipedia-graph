@@ -7,12 +7,9 @@ import org.apache.spark.sql.functions.udf
 import java.sql.Timestamp
 
 object CosineSimilarity extends Serializable {
-  // extends Serializable => needed in order to get computeCS work from a class.
-  // transform operations work only in objects or things that are Serializable
-
   // import implicits using current spark session
   // (used to recognize $ as col and for default encoders)
-  private val spark = SparkSession.getActiveSession.get
+  lazy private val spark = SparkSession.getActiveSession.get
   import spark.implicits._
 
   /** Returns the dot product of given two arrays.
