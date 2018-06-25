@@ -33,9 +33,9 @@ class Link(val input: ParserInput) extends Parser {
   def White = rule { zeroOrMore(' ') }
 }
 
-object PagePreprocessor {
+object PagePreprocessor extends Serializable {
   // needed in order to process map operations
-  private val spark = SparkSession.getActiveSession.get
+  lazy private val spark = SparkSession.getActiveSession.get
   import spark.implicits._
 
   private val newLineStripper = """\n+""".r

@@ -4,6 +4,8 @@ import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession, Row}
 
+import org.apache.hadoop.fs.{FileSystem, Path}
+
 import java.io.File
 import java.sql.Timestamp
 import java.util.TimeZone
@@ -14,41 +16,45 @@ import scala.util.{Success, Try}
 trait SparkSessionWrapper {
   // remove master if you want to execute this program in a cluster
   lazy val spark: SparkSession = {
-    SparkSession
+    val sp = SparkSession
       .builder()
-      .master("local[4]")
       .appName("wikipediaGraph")
-      .getOrCreate()
+
+    if (new File("/home/daniele").exists()) {
+      sp.master("local[*]")
+    }
+
+    sp.getOrCreate()
   }
 }
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
     import spark.implicits._
-    // retrieve the path of resources folder
-    val resourcesDir = env.getOrElse("SP_RES_DIR", "")
+
+    var resourcesDir = ""
+    var inputFile = ""
+    if (args.length == 2) {
+      resourcesDir = args(0)
+      inputFile = args(1)
+    }
+    else {
+      spark.stop()
+    }
 
     // TODO: find a way to load (in memory) the data coming from a Wikipedia dump!
 
-    val resource = "test.xml"
-//    val resource = "huge.xml"
-//    val resource = "NGC_4457_neighbours.xml"
-//        val resource = "v_small.xml"
-    intermediate(resourcesDir, resource)
+    val resource = s"input/$inputFile"
+    val outputDir = "output/" ++ inputFile.stripSuffix(".xml")
 
-    similarity(resourcesDir)
+    intermediate(resourcesDir, resource, outputDir)
 
-    val folders : Seq[String] =
-      getListOfSubDirectories(s"$resourcesDir/relationships")
-    folders.map((l: String) =>
-        spark.read.csv(s"$resourcesDir/relationships/$l")
-      )
-      .foreach(_.show(150))
+    similarity(resourcesDir, outputDir)
 
     spark.stop()
   }
 
-  def intermediate(path: String, resource: String) : Unit = {
+  def intermediate(path: String, resource: String, output: String) : Unit = {
     import spark.implicits._
 
     val df = extractPages(s"$path/$resource")
@@ -67,12 +73,11 @@ object Main extends SparkSessionWrapper {
       )
     }).toDF("title", "timestamp", "infobox", "neighbours", "links")
 
-    PagePreprocessor
-      .computeFeaturesVectors(preprocessedDF, "infobox", "links", 300)
+    PagePreprocessor.computeFeaturesVectors(preprocessedDF, "infobox", "links", 300)
       /* copy the title column since partitioning remove the column */
       .withColumn("to_split", $"title")
       .write.partitionBy("to_split")
-      .mode(SaveMode.Overwrite).parquet(s"$path/preprocessed")
+      .mode(SaveMode.Overwrite).parquet(s"$path/$output/preprocessed")
 
     // remove from memory previous dataframes
     df.unpersist()
@@ -80,21 +85,23 @@ object Main extends SparkSessionWrapper {
   }
 
   def getListOfSubDirectories(directoryName: String): Array[String] = {
-    new File(directoryName)
-      .listFiles
+    val path = new Path(directoryName)
+    path.getFileSystem(spark.sparkContext.hadoopConfiguration)
+      .listStatus(path)
       .filter(_.isDirectory)
-      .map(_.getName)
+      .map(_.getPath.toString)
   }
 
-  def similarity(path: String): Unit = {
+  def similarity(path: String, output: String): Unit = {
     import spark.implicits._
 
     val linksFlatten = udf {
       links: Seq[Seq[String]] => links.map(_.toSet).reduce((a, b) => a | b).toSeq
     }
+    val inputPath = s"$path/$output/preprocessed"
 
-    val folders : Seq[String] = getListOfSubDirectories(s"$path/preprocessed")
-    folders.map((l: String) => spark.read.parquet(s"$path/preprocessed/$l"))
+    val folders : Seq[String] = getListOfSubDirectories(inputPath)
+    folders.map((l: String) => spark.read.parquet(l))
       .foreach((df : DataFrame) => {
         val tmpNeighbours : Row = df.groupBy("title")
           .agg(collect_set("neighbours").alias("tmp"))
@@ -105,7 +112,7 @@ object Main extends SparkSessionWrapper {
           .take(1)(0)
 
         val tmpDFlist = tmpNeighbours.getAs[Seq[String]]("all_neighbours")
-          .map(l => Try(spark.read.parquet(s"$path/preprocessed/to_split=$l")))
+          .map(l => Try(spark.read.parquet(s"$inputPath/to_split=$l")))
           /* Note: this collect is of Scala collections, not Spark SQL */
           .collect { case Success(readDF) => readDF }
 
@@ -131,7 +138,8 @@ object Main extends SparkSessionWrapper {
           .replaceAll("\\s", "")
 
         CosineSimilarity.computeCS(df, neighbours)
-          .write.mode(SaveMode.Overwrite).csv(raw"$path/relationships/$pageTitle")
+          .write.mode(SaveMode.Overwrite)
+          .csv(raw"$path/$output/relationships/$pageTitle")
 
         neighbours.unpersist()
       })
