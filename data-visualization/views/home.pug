@@ -9,7 +9,8 @@ block style
     link(rel="stylesheet" href="/css/main.css")
 
 block scripts
-    script(src="/js/bundle.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.14/cytoscape.min.js")
+    script(src="/js/loadGraph.js")
 
 //- insert page content
 block content
@@ -20,15 +21,15 @@ block content
         div(class="row form-params")
             .col-pp-100
                 form(action="/query" method="POST")
-                .form-part
-                    div(class="col-pp-100 col-tl-40")
-                        input(type="text" id="w-page" name="w-page" placeholder="Wikipedia Title Page" autofocus)
-                .form-part
-                    div(class="col-pp-100 col-tl-20")
-                        input(type="datetime-local" id="start" name="start")
-                .form-part
-                    div(class="col-pp-100 col-tl-20")
-                        button(class="button button-default button-full-width h4" type="submit")= "Visualize"
+                    .form-part
+                        div(class="col-pp-100 col-tl-40")
+                            input(type="text" id="w_page" name="w_page" placeholder="Wikipedia Title Page" autofocus)
+                    .form-part
+                        div(class="col-pp-100 col-tl-20")
+                            input(type="datetime-local" id="up_to" name="up_to")
+                    .form-part
+                        div(class="col-pp-100 col-tl-20")
+                            button(class="button button-default button-full-width h4" type="submit")= "Visualize"
     .container-full-width
         .row
             div(class="col-pp-100 canvas" id="graph-container")

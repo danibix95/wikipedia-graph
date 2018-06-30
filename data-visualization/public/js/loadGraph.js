@@ -1,12 +1,12 @@
 // Cose Demo from Cytoscape
-const cytoscape = require("cytoscape");
+"use strict";
 
 Promise.all([
-    fetch('js/cy-style.json', {mode: 'no-cors'})
+    fetch('/js/cy-style.json', {mode: 'no-cors'})
         .then(function(res) {
             return res.json()
         }),
-    fetch('js/data.json', {mode: 'no-cors'})
+    fetch('/js/data.json', {mode: 'no-cors'})
         .then(function(res) {
             return res.json()
         })
@@ -18,14 +18,14 @@ Promise.all([
         layout: {
             name: 'cose',
             idealEdgeLength: 100,
-            nodeOverlap: 20,
+            nodeOverlap: 32,
             refresh: 20,
             fit: true,
             padding: 30,
             randomize: true,
-            componentSpacing: 100,
+            componentSpacing: 200,
             nodeRepulsion: 400000,
-            edgeElasticity: 100,
+            edgeElasticity: 120,
             nestingFactor: 5,
             gravity: 80,
             numIter: 1000,

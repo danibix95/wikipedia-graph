@@ -24,26 +24,18 @@ function walk(dir, fileList) {
     return fileList;
 }
 
-// USING PERIODIC COMMIT 2000
-// LOAD CSV FROM "file://${csv}" AS row
-//
-// MERGE (page1:Page {title: row[0], timestamp: row[1]})
-// MERGE (page2:Page {title: row[2], timestamp: row[3]})
-// MERGE (page1)-[l:IS_LINKED_TO]->(page2)
-// ON CREATE SET l.timestamp = row[1], l.similarity = row[4];
-
 const insertData = (csv) =>
-    `USING PERIODIC COMMIT 2000 LOAD CSV FROM "file://${csv}" AS row MERGE (page1:Page {title: row[0], timestamp: row[1]}) MERGE (page2:Page {title: row[2], timestamp: row[3]}) MERGE (page1)-[l:IS_LINKED_TO]->(page2) ON CREATE SET l.timestamp = row[1], l.similarity = row[4];`;
+    `USING PERIODIC COMMIT 2000
+    LOAD CSV FROM "file://${csv}" AS row
+    MERGE (page1:Page {title: row[0]})
+    MERGE (page2:Page {title: row[2]})
+    CREATE (page1)-[l:IS_LINKED_TO {ts_from: row[1], ts_to: row[3], similarity : row[4]}]->(page2)`;
+
 const index1 = "CREATE INDEX ON :Page(title)";
-const index2 = "CREATE INDEX ON :Page(timestamp)";
 
 console.time("loadData");
 console.log("Create index on page title...");
 session.run(index1)
-    .then((res1) => {
-        console.log("Done!\nCreate index on page timestamp...");
-        return session.run(index2);
-    })
     .then((res1) => {
         console.log("Done!\nInsert nodes and relationships...");
         return Promise.all(
