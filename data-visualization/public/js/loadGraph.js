@@ -1,19 +1,59 @@
 // Cose Demo from Cytoscape
 "use strict";
 
-Promise.all([
-    fetch('/js/cy-style.json', {mode: 'no-cors'})
-        .then(function(res) {
-            return res.json()
-        }),
-    fetch('/js/data.json', {mode: 'no-cors'})
-        .then(function(res) {
-            return res.json()
-        })
-])
-.then(function(dataArray) {
+// style used by Cytoscape to draw the graph
+let graphStyle;
+
+async function loadStyle() {
+    try {
+        const response = await fetch('/js/cy-style.json', {mode: 'no-cors'});
+        graphStyle = response.json();
+        console.log("Style has been retrieved!");
+    }
+    catch (error) {
+        console.error(`Error retrieving graph style\n${error}`);
+    }
+}
+
+async function loadData(requestData) {
+    console.log("Data have been requested!");
+
+    const headers = new Headers();
+    headers.append("Accept", "application/json");
+    headers.append("Content-Type", "application/json");
+
+    try {
+        const response = await fetch(
+            "/query",
+            {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(requestData),
+            }
+        );
+
+        return response.json();
+    }
+    catch (error) {
+        console.log(`Error retrieving graph data\n${error}`);
+        return {};
+    }
+}
+
+async function drawGraph() {
+    const requestData = {
+        pageTitle : document.getElementById("w_page").value,
+        pageTimestamp : document.getElementById("up_to").value
+    };
+
+    const graphData = await loadData(requestData);
+    console.log("Data have been received!", graphData);
+
     const cy = window.cy = cytoscape({
         container: document.getElementById("graph-container"),
+
+        elements: graphData,
+        style: graphStyle,
 
         layout: {
             name: 'cose',
@@ -32,10 +72,16 @@ Promise.all([
             initialTemp: 200,
             coolingFactor: 0.95,
             minTemp: 1.0
-        },
-
-        style: dataArray[0],
-
-        elements: dataArray[1]
+        }
     });
-});
+    console.log("Graph has been drawn!");
+}
+
+window.onload = () => {
+    loadStyle();
+
+    document.getElementById("visualize")
+            .addEventListener("click", (ev) => {
+                drawGraph();
+            });
+};

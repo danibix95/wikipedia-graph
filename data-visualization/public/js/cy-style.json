@@ -10,7 +10,7 @@
   "style": {
     "width": "30",
     "height": "30",
-    "content": "data(name)",
+    "content": "data(id)",
     "font-size": "12px",
     "text-valign": "center",
     "text-halign": "center",
@@ -54,7 +54,7 @@
     "haystack-radius": "0.5",
     "opacity": "0.4",
     "line-color": "#bbb",
-    "width": "mapData(weight, 0, 1, 1, 10)",
+    "width": "mapData(similarity, 0, 1, 1, 10)",
     "overlay-padding": "3px"
   }
 }, {

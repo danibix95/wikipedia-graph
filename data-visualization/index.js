@@ -18,6 +18,7 @@ app.set("view engine", "pug");
 // do not invert the following two lines
 app.use(compression());
 app.use(minify());
+app.use(express.json());
 
 /* =================== */
 app.get("/", server.home);

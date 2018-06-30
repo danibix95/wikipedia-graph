@@ -7,12 +7,11 @@ const neo4j = require("neo4j-driver").v1;
 const objects = require("./objects.js");
 
 /* ===== QUERIES ===== */
-const oneNode = `match (n:Page {title: 'Clock'})-[r:IS_LINKED_TO]->(m:Page)
-where r.ts_from < '2006-08-28T23:19:26.000+02:00' and r.ts_to < '2006-08-28T23:19:26.000+02:00'
+const oneNode = `match (n:Page {title: {whichPage} })-[r:IS_LINKED_TO]->(m:Page)
+where r.ts_from < {upTo} and r.ts_to < {upTo}
 with m, max(r.ts_from) as mts1, max(r.ts_to) as mts2
-match l=(n:Page {title: 'Clock'})-[r:IS_LINKED_TO {ts_from:mts1, ts_to:mts2}]->(m:Page)
-return l
-limit 20`;
+match l=(n:Page {title: {whichPage} })-[r:IS_LINKED_TO {ts_from:mts1, ts_to:mts2}]->(m:Page)
+return l`;
 
 /* =================== */
 
@@ -35,7 +34,8 @@ class DB {
         return session.run(
             oneNode,
             {
-                whichPage : pageTitle
+                whichPage : pageTitle,
+                upTo : pageTimestamp
             }
         )
         .then((result) => {

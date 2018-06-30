@@ -6,8 +6,14 @@ html, body, h1, h2, h3, h4, h5, h6 {
     font-family: "Lato", sans-serif;
 }
 
-.form-params {
+.submit-fields {
+    display: flex;
+    align-items: center;
     height: 10vh;
+}
+
+#visualize {
+    margin-bottom: 0;
 }
 
 .canvas {

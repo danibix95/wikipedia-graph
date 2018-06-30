@@ -18,18 +18,13 @@ block content
         //-.row
         //-    .col-pp-100
         //-        h3(class="text-center title")= "Wikipedia Graph Visualizer"
-        div(class="row form-params")
-            .col-pp-100
-                form(action="/query" method="POST")
-                    .form-part
-                        div(class="col-pp-100 col-tl-40")
-                            input(type="text" id="w_page" name="w_page" placeholder="Wikipedia Title Page" autofocus)
-                    .form-part
-                        div(class="col-pp-100 col-tl-20")
-                            input(type="datetime-local" id="up_to" name="up_to")
-                    .form-part
-                        div(class="col-pp-100 col-tl-20")
-                            button(class="button button-default button-full-width h4" type="submit")= "Visualize"
+        div(class="row submit-fields")
+            div(class="col-pp-100 col-tl-40")
+                input(type="text" id="w_page" name="w_page" placeholder="Wikipedia Title Page" autofocus)
+            div(class="col-pp-100 col-tl-20")
+                input(type="datetime-local" id="up_to" name="up_to")
+            div(class="col-pp-100 col-tl-20")
+                button(class="button button-default button-full-width h4" id="visualize" type="button")= "Visualize"
     .container-full-width
         .row
             div(class="col-pp-100 canvas" id="graph-container")

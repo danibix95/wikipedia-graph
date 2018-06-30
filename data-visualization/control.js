@@ -7,30 +7,21 @@ class Control {
     }
 
     static query(request, response) {
-        console.log("Request arrived");
-
-        // if (!request.body.w_page) {
-        //     // TODO: need to update notify user of wrong input
-        //     response.redirect("/missing");
-        //     return response.end();
-        // }
-        // const pageTitle = request.body.w_page[0].toUpperCase()
-        //                 + request.body.w_page.slice(1);
-        const pageTitle = "";
-
-        let pageTimestamp = new Date();
-        if (request.body.up_to) {
-            console.log(1);
+        if (!request.body.pageTitle || request.body.pageTitle.length === 0) {
+            // TODO: need to update notify user of wrong input
+            response.redirect("/missing");
+            return response.end();
         }
-        else {
-            console.log(2);
-        }
+        const pageTitle = request.body.pageTitle[0].toUpperCase()
+                        + request.body.pageTitle.slice(1);
+
+        const pageTimestamp = request.body.pageTimestamp
+            ? request.body.pageTimestamp
+            : new Date();
 
         model.retrieveNeighbours(pageTitle, pageTimestamp)
             .then((json_data) => {
-                console.log("Result: ", json_data);
-                response.redirect("/");
-                response.render("home", { data: json_data });
+                response.send(json_data);
             })
             .catch((error) => {
                 console.log("Error: ", error);
