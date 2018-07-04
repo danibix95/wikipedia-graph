@@ -61,19 +61,18 @@ object Main extends SparkSessionWrapper {
 
     /* Pre-processing of Wikipedia pages */
     val preprocessedDF = df.map(r => {
-      val (infobox, neighbours, linksContext) =
+      val (processedPage, neighbours) =
         PagePreprocessor.extractFeatures(r.getAs[String]("text"))
       // build new dataframe row
       (
         r.getAs[String]("title"),
         r.getAs[Timestamp]("timestamp"),
-        infobox,
-        neighbours,
-        linksContext
+        processedPage,
+        neighbours
       )
-    }).toDF("title", "timestamp", "infobox", "neighbours", "links")
+    }).toDF("title", "timestamp", "pageProcessed", "neighbours")
 
-    PagePreprocessor.computeFeaturesVectors(preprocessedDF, "infobox", "links", 300)
+    PagePreprocessor.computeFeaturesVectors(preprocessedDF, "pageProcessed", 300)
       /* copy the title column since partitioning remove the column */
       .withColumn("to_split", $"title")
       .write.partitionBy("to_split")
