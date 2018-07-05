@@ -124,25 +124,18 @@ object PagePreprocessor extends Serializable {
     (infoboxContent ++ linksContext, neighbours)
   }
 
-  def computeFeaturesVectors(dataframe: DataFrame, pageCol: String,
+  def computeFeaturesVectors(dataframe: DataFrame, pageW2V: Word2VecModel,
                              vectorSize: Int) : DataFrame = {
-    val pageW2V = new Word2Vec()
-      .setInputCol(pageCol)
-      .setOutputCol("features")
-      .setVectorSize(vectorSize)
-      .setNumPartitions(2)
-      .setMinCount(0)
 
-    // compute feature vectors for both infobox and links columns
-    val pageVec = pageW2V.fit(dataframe).transform(dataframe)
+    // compute features vectors for both infobox and links columns
+    val pageVec = pageW2V.transform(dataframe)
 
-    // merge together the two generated features vector
+    // prepare the final preprocessed dataframe
     val processedData = pageVec.map(r => {
         val title = r.getAs[String]("title")
         val timestamp = r.getAs[Timestamp]("timestamp")
         val features = r.getAs[Vector]("features")
 
-        // take also the neighbours column
         val neighbours = r.getAs[Seq[String]]("neighbours")
         // ignore text and pre-compute features vectors norm
         (title, timestamp, features, Vectors.norm(features, 2), neighbours)

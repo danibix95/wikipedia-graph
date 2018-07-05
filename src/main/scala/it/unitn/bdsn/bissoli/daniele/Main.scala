@@ -1,16 +1,15 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession, Row}
-
-import org.apache.hadoop.fs.{FileSystem, Path}
-
 import java.io.File
 import java.sql.Timestamp
 import java.util.TimeZone
 
-import scala.sys.env
+import org.apache.hadoop.fs.Path
+import org.apache.spark.ml.feature.Word2VecModel
+import org.apache.spark.ml.linalg.Vector
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.{DataFrame, Row, SaveMode, SparkSession}
+
 import scala.util.{Success, Try}
 
 trait SparkSessionWrapper {
@@ -30,7 +29,6 @@ trait SparkSessionWrapper {
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
-    import spark.implicits._
 
     var resourcesDir = ""
     var inputFile = ""
@@ -72,7 +70,10 @@ object Main extends SparkSessionWrapper {
       )
     }).toDF("title", "timestamp", "pageProcessed", "neighbours")
 
-    PagePreprocessor.computeFeaturesVectors(preprocessedDF, "pageProcessed", 300)
+    // load the Word2Vec model
+    val W2VModel = Word2VecModel.load(s"$path/W2V")
+
+    PagePreprocessor.computeFeaturesVectors(preprocessedDF, W2VModel, 300)
       /* copy the title column since partitioning remove the column */
       .withColumn("to_split", $"title")
       .write.partitionBy("to_split")
