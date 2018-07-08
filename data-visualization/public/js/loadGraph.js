@@ -40,14 +40,21 @@ async function loadData(requestData) {
     }
 }
 
-async function drawGraph() {
+async function drawGraph(cached = false) {
     const requestData = {
         pageTitle : document.getElementById("w_page").value,
         pageTimestamp : document.getElementById("up_to").value
     };
 
-    const graphData = await loadData(requestData);
-    console.log("Data have been received!", graphData);
+    let graphData;
+    if (cached) {
+        graphData = JSON.parse(window.localStorage.getItem("cacheData"));
+    }
+    else {
+        graphData = await loadData(requestData);
+    }
+
+    console.log("Data have been received!"/*, graphData*/);
 
     const cy = window.cy = cytoscape({
         container: document.getElementById("graph-container"),
@@ -75,10 +82,17 @@ async function drawGraph() {
         }
     });
     console.log("Graph has been drawn!");
+
+    if (!cached) window.localStorage.setItem("cacheData", JSON.stringify(graphData));
 }
 
 window.onload = () => {
-    loadStyle();
+    loadStyle().then(() => {
+        if (window.localStorage.getItem("cacheData") !== undefined) {
+            drawGraph(true);
+        }
+    });
+
 
     document.getElementById("visualize")
             .addEventListener("click", (ev) => {

@@ -16,10 +16,10 @@ class Control {
                         + request.body.pageTitle.slice(1);
 
         const pageTimestamp = request.body.pageTimestamp
-            ? request.body.pageTimestamp
-            : new Date();
+            ? new Date(request.body.pageTimestamp).toISOString()
+            : new Date().toISOString();
 
-        model.retrieveNeighbours(pageTitle, pageTimestamp)
+        model.retrieveAdjacentEdges(pageTitle, pageTimestamp)
             .then((json_data) => {
                 response.send(json_data);
             })
