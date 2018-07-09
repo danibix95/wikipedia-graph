@@ -47,6 +47,7 @@ class Relationship {
                 "tsFrom": this.timestampFrom,
                 "tsTo": this.timestampTo,
                 "similarity": this.similarity,
+                "show_sim": this.similarity.toFixed(3)
             },
             "position": {},
             "group": "edges",

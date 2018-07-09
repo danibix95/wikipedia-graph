@@ -50,12 +50,21 @@
 }, {
   "selector": "edge",
   "style": {
+    "color": "black",
+    "edge-text-rotation": "autorotate",
     "curve-style": "unbundled-bezier",
-    "haystack-radius": "0.5",
-    "opacity": "0.4",
-    "line-color": "#bbb",
-    "width": "mapData(similarity, 0, 1, 1, 10)",
-    "overlay-padding": "3px"
+    "overlay-padding": "1px",
+    "text-margin-y": "1em",
+    "target-arrow-shape": "triangle-backcurve",
+    "target-arrow-color": "mapData(similarity, 0, 1, black, deepskyblue)",
+    "opacity": "0.8",
+    "line-color": "mapData(similarity, 0, 1, black, deepskyblue)",
+    "width": "mapData(similarity, 0, 1, 0.5, 10)"
+  }
+}, {
+  "selector": "edge:active",
+  "style": {
+    "content": "data(show_sim)"
   }
 }, {
   "selector": "node.unhighlighted",

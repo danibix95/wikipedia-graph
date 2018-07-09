@@ -1,16 +1,17 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession, Row}
-
-import org.apache.hadoop.fs.{FileSystem, Path}
-
-import java.io.File
+import java.io.{File, PrintWriter}
 import java.sql.Timestamp
 import java.util.TimeZone
 
-import scala.sys.env
+import org.apache.hadoop.fs.Path
+import org.apache.spark.ml.feature.Word2VecModel
+import org.apache.spark.ml.linalg.Vector
+import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.{DataFrame, Row, SaveMode, SparkSession}
+import org.apache.spark.storage.StorageLevel
+
 import scala.util.{Success, Try}
 
 trait SparkSessionWrapper {
@@ -30,7 +31,6 @@ trait SparkSessionWrapper {
 
 object Main extends SparkSessionWrapper {
   def main(args: Array[String]): Unit = {
-    import spark.implicits._
 
     var resourcesDir = ""
     var inputFile = ""
@@ -57,23 +57,25 @@ object Main extends SparkSessionWrapper {
   def intermediate(path: String, resource: String, output: String) : Unit = {
     import spark.implicits._
 
-    val df = extractPages(s"$path/$resource")
+    val df = extractPages(path, resource)
 
     /* Pre-processing of Wikipedia pages */
     val preprocessedDF = df.map(r => {
-      val (infobox, neighbours, linksContext) =
+      val (processedPage, neighbours) =
         PagePreprocessor.extractFeatures(r.getAs[String]("text"))
       // build new dataframe row
       (
         r.getAs[String]("title"),
         r.getAs[Timestamp]("timestamp"),
-        infobox,
-        neighbours,
-        linksContext
+        processedPage,
+        neighbours
       )
-    }).toDF("title", "timestamp", "infobox", "neighbours", "links")
+    }).toDF("title", "timestamp", "pageProcessed", "neighbours")
 
-    PagePreprocessor.computeFeaturesVectors(preprocessedDF, "infobox", "links", 300)
+    // load the Word2Vec model
+    val W2VModel = Word2VecModel.load(s"$path/W2V")
+
+    PagePreprocessor.computeFeaturesVectors(preprocessedDF, W2VModel, 300)
       /* copy the title column since partitioning remove the column */
       .withColumn("to_split", $"title")
       .write.partitionBy("to_split")
@@ -150,13 +152,101 @@ object Main extends SparkSessionWrapper {
     * It expect an input file complaint to XML schema provided
     * here: https://www.mediawiki.org/xml/export-0.8.xsd
     * */
-  def extractPages(filePath : String) : DataFrame = {
+  def extractPages(path : String, file : String) : DataFrame = {
     val zip = udf((xs: Seq[String], ys: Seq[String]) => xs.zip(ys))
+
+    // by default all the values are nullable
+    val redirectType = StructType(
+      List(
+        StructField("_VALUE", StringType),
+        StructField("_title", StringType)
+      )
+    )
+
+    val contributorType = StructType(
+      List(
+        StructField("_VALUE", StringType),
+        StructField("_deleted", StringType),
+        StructField("username", StringType),
+        StructField("ip", StringType),
+        StructField("id", LongType)
+      )
+    )
+
+    val commentType = StructType(
+      List(
+        StructField("_VALUE", StringType),
+        StructField("_deleted", StringType)
+      )
+    )
+
+    val contentModelType = StructType(
+      List(
+        StructField("_VALUE", StringType)
+      )
+    )
+
+    val contentFormatType = StructType(
+      List(
+        StructField("_VALUE", StringType)
+      )
+    )
+
+    val textType = StructType(
+      List(
+        StructField("_VALUE", StringType),
+        StructField("_bytes", LongType),
+        StructField("_deleted", StringType),
+        StructField("_space", StringType),
+        StructField("id", StringType)
+      )
+    )
+
+    val revisionType = StructType(
+      List(
+        StructField("id", LongType),
+        StructField("parentid", LongType),
+        StructField("timestamp", StringType),
+        StructField("contributor", contributorType),
+        StructField("minor", StringType),
+        StructField("comment", commentType),
+        StructField("model", contentModelType),
+        StructField("format", contentFormatType),
+        StructField("text", textType),
+        StructField("sha1", StringType)
+      )
+    )
+
+    val discussionType = StructType(
+      List(
+          StructField("ThreadSubject", StringType),
+          StructField("ThreadParent", LongType),
+          StructField("ThreadAncestor", LongType),
+          StructField("ThreadPage", StringType),
+          StructField("ThreadID", LongType),
+          StructField("ThreadAuthor", StringType),
+          StructField("ThreadEditStatus", StringType),
+          StructField("ThreadType", StringType)
+      )
+    )
+
+    val pageSchema = StructType(
+      List(
+        StructField("title", StringType),
+        StructField("ns", LongType),
+        StructField("id", LongType),
+        StructField("redirect", redirectType),
+        StructField("restrictions", StringType),
+        StructField("revision", ArrayType(revisionType, containsNull = true)),
+        StructField("discussionthreadinginfo", discussionType)
+      )
+    )
 
     spark.read
       .format("com.databricks.spark.xml")
       .option("rowTag", "page")
-      .load(filePath)
+      .schema(pageSchema)
+      .load(s"$path/$file")
       .select(
         col("title"),
         col("revision.timestamp"),

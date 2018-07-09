@@ -116,56 +116,36 @@ object PagePreprocessor extends Serializable {
     }.map(_.trim).filter(_.nonEmpty)
   }
 
-  def extractFeatures(page: String) : (Seq[String], Seq[String], Seq[String]) = {
+  def extractFeatures(page: String) : (Seq[String], Seq[String]) = {
     val (infoboxContent, lastPos) = extractInfobox(page)
     val neighbours = getNeighbours(page)
     val linksContext = extractLinksContext(page.slice(lastPos, page.length))
 
-    (infoboxContent, neighbours, linksContext)
+    (infoboxContent ++ linksContext, neighbours)
   }
 
-  def computeFeaturesVectors(dataframe: DataFrame, infoboxCol: String,
-                             linksCol: String, vectorSize: Int) : DataFrame = {
-    val infoboxW2V = new Word2Vec()
-      .setInputCol(infoboxCol)
-      .setOutputCol("infobox_vector")
-      .setVectorSize(vectorSize)
-      .setNumPartitions(2)
-      .setMinCount(0)
+  def computeFeaturesVectors(dataframe: DataFrame, pageW2V: Word2VecModel,
+                             vectorSize: Int) : DataFrame = {
 
-    val linksW2V = new Word2Vec()
-      .setInputCol(linksCol)
-      .setOutputCol("links_vector")
-      .setVectorSize(vectorSize)
-      .setNumPartitions(2)
-      .setMinCount(0)
+    // compute features vectors for both infobox and links columns
+    val pageVec = pageW2V.transform(dataframe)
 
-    // compute feature vectors for both infobox and links columns
-    val infoboxVec = infoboxW2V.fit(dataframe).transform(dataframe)
-    val tmpDf = linksW2V.fit(infoboxVec).transform(infoboxVec)
-
-    // merge together the two generated features vector
-    val preprocessedData = new VectorAssembler()
-      .setInputCols(Array("infobox_vector", "links_vector"))
-      .setOutputCol("features")
-      .transform(tmpDf)
-      .map(r => {
+    // prepare the final preprocessed dataframe
+    val processedData = pageVec.map(r => {
         val title = r.getAs[String]("title")
         val timestamp = r.getAs[Timestamp]("timestamp")
         val features = r.getAs[Vector]("features")
 
-        // take also the neighbours column
         val neighbours = r.getAs[Seq[String]]("neighbours")
-        // remove text and pre-compute features vectors norm
+        // ignore text and pre-compute features vectors norm
         (title, timestamp, features, Vectors.norm(features, 2), neighbours)
       })
       .toDF("title", "timestamp", "features", "norm", "neighbours")
 
     // remove from memory previous DataFrames
-    infoboxVec.unpersist()
-    tmpDf.unpersist()
+    pageVec.unpersist()
 
     // return final result
-    preprocessedData
+    processedData
   }
 }

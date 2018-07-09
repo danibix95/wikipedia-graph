@@ -13,13 +13,13 @@ class Control {
             return response.end();
         }
         const pageTitle = request.body.pageTitle[0].toUpperCase()
-                        + request.body.pageTitle.slice(1);
+                        + request.body.pageTitle.slice(1).toLowerCase();
 
         const pageTimestamp = request.body.pageTimestamp
-            ? request.body.pageTimestamp
-            : new Date();
+            ? new Date(request.body.pageTimestamp).toISOString()
+            : new Date().toISOString();
 
-        model.retrieveNeighbours(pageTitle, pageTimestamp)
+        model.retrieveAdjacentEdges(pageTitle, pageTimestamp)
             .then((json_data) => {
                 response.send(json_data);
             })
