@@ -9,19 +9,16 @@ const driver = neo4j.driver(process.env.NEO_URI, neo4j.auth.basic(process.env.NE
 
 const session = driver.session();
 
-function walk(dir, fileList) {
-    const files = fs.readdirSync(dir);
-    // initialize if not already created
-    files.forEach((file) => {
+function getFiles(dir) {
+    return fs.readdirSync(dir).map((file) => {
         const fullPath = path.join(dir, file);
-        if (fs.statSync(fullPath).isDirectory()) {
-            fileList = walk(fullPath, fileList);
+        if (fs.statSync(fullPath).isFile() && file.endsWith("\.csv")) {
+            return fullPath;
         }
         else {
-            if (file.endsWith("\.csv")) fileList.push(fullPath);
+            return ""
         }
-    });
-    return fileList;
+    }).filter(f => f.length > 0);
 }
 
 const insertData = (csv) =>
@@ -39,7 +36,7 @@ session.run(index1)
     .then((res1) => {
         console.log("Done!\nInsert nodes and relationships...");
         return Promise.all(
-                walk(process.env.CSV_DATA, [])
+                getFiles(process.env.CSV_DATA)
                 .map((f) => session.run(insertData(f)))
         )
     })

@@ -124,9 +124,7 @@ object PagePreprocessor extends Serializable {
     (infoboxContent ++ linksContext, neighbours)
   }
 
-  def computeFeaturesVectors(dataframe: DataFrame, pageW2V: Word2VecModel,
-                             vectorSize: Int) : DataFrame = {
-
+  def computeFeaturesVectors(dataframe: DataFrame, pageW2V: Word2VecModel) : DataFrame = {
     // compute features vectors for both infobox and links columns
     val pageVec = pageW2V.transform(dataframe)
 
