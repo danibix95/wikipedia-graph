@@ -1,9 +1,10 @@
 name := "wikipedia-graph"
 
-version := "0.3"
+version := "0.4"
 
 scalaVersion := "2.11.6"
 
+/* % "provided"*/
 val sparkVer = "2.3.0"
 libraryDependencies ++=
   Seq(
@@ -39,6 +40,6 @@ assemblyMergeStrategy in assembly := {
 }
 
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
-assemblyJarName in assembly := "wikipedia-graph-fat-jar_0.3.jar"
+assemblyJarName in assembly := "wikipedia-graph-fat-jar_0.4.jar"
 
 fullClasspath in Runtime := (fullClasspath in (Compile, run)).value

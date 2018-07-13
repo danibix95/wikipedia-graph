@@ -1,16 +1,15 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import java.io.{File, PrintWriter}
+import java.io.File
 import java.sql.Timestamp
 import java.util.TimeZone
 
-import org.apache.hadoop.fs.Path
+import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.spark.ml.feature.Word2VecModel
 import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, Row, SaveMode, SparkSession}
-import org.apache.spark.storage.StorageLevel
 
 import scala.util.{Success, Try}
 
@@ -42,14 +41,14 @@ object Main extends SparkSessionWrapper {
       spark.stop()
     }
 
-    // TODO: find a way to load (in memory) the data coming from a Wikipedia dump!
-
     val resource = s"input/$inputFile"
     val outputDir = "output/" ++ inputFile.stripSuffix(".xml")
 
     intermediate(resourcesDir, resource, outputDir)
 
     similarity(resourcesDir, outputDir)
+
+    filter(resourcesDir, outputDir)
 
     spark.stop()
   }
@@ -75,7 +74,7 @@ object Main extends SparkSessionWrapper {
     // load the Word2Vec model
     val W2VModel = Word2VecModel.load(s"$path/W2V")
 
-    PagePreprocessor.computeFeaturesVectors(preprocessedDF, W2VModel, 300)
+    PagePreprocessor.computeFeaturesVectors(preprocessedDF, W2VModel)
       /* copy the title column since partitioning remove the column */
       .withColumn("to_split", $"title")
       .write.partitionBy("to_split")
@@ -141,10 +140,24 @@ object Main extends SparkSessionWrapper {
 
         CosineSimilarity.computeCS(df, neighbours)
           .write.mode(SaveMode.Overwrite)
-          .csv(raw"$path/$output/relationships/$pageTitle")
+          .parquet(raw"$path/$output/relationships/$pageTitle")
 
         neighbours.unpersist()
       })
+  }
+
+  def filter(path: String, output: String) : Unit = {
+    val outputDir = s"$path/$output/final"
+    // clear output folder
+    FileSystem.get(spark.sparkContext.hadoopConfiguration)
+      .delete(new Path(outputDir), true)
+
+    val inputPath = s"$path/$output/relationships"
+    val folders : Seq[String] = getListOfSubDirectories(inputPath)
+    folders.map((l: String) => spark.read.parquet(l))
+      .filter(_.count > 0)
+      .map(DataFilter.filter)
+      .foreach(_.write.mode(SaveMode.Append).csv(outputDir))
   }
 
   /** Returns a Dataframe representing all Wikipedia pages
@@ -266,6 +279,7 @@ object Main extends SparkSessionWrapper {
         col("title"),
         col("timestamp"),
         col("tmp._2").alias("text")
-      ).na.drop(Seq("text"))
+      )
+      .na.drop(Seq("text"))
   }
 }
