@@ -28,6 +28,32 @@ class Control {
                 response.redirect("/");
             });
     }
+
+    static graph(request, response) {
+        const time = request.body.time
+            ? new Date(request.body.time).toISOString()
+            : new Date().toISOString();
+
+        model.retrieveGraph(time)
+            .then((json_data) => {
+                response.send(json_data);
+            })
+            .catch((error) => {
+                console.log("Error: ", error);
+                response.redirect("/");
+            });
+    }
+
+    static evolution(request, response) {
+        model.retrieveRange()
+            .then((data) => {
+                response.render("evolution", data);
+            })
+            .catch((error) => {
+                console.error(error);
+                response.render("evolution", { msg: "Impossible to load range timestamp!"});
+            })
+    }
 }
 
 module.exports = Control;

@@ -1,0 +1,32 @@
+//- Incorporate default page layout
+extends layout.pug
+
+//- edit page title
+block title
+    title= "Wikipedia Graph Visualizer - Evolution"
+
+block style
+    link(rel="stylesheet" href="/css/main.css")
+
+block scripts
+    script(src="/lib/cytoscape/cytoscape.min.js")
+    //-script(src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.14/cytoscape.min.js")
+    script(src="/js/loadGraphEv.js")
+
+//- insert page content
+block content
+    if msg
+        .container-full-width
+            div(class="row submit-fields error")
+                .col-pp-100
+                    h3= msg
+
+    .container-full-width
+        div(class="row submit-fields")
+            .col-pp-100
+                h3(class="text-center title")= "Wikipedia Graph Visualizer"
+                //- the step is computed as one week in milliseconds
+                input(type="range" id="time" name="time" min=min max=max value=max step=(7 * 24 * 3600 * 1000))
+    .container-full-width
+        .row
+            div(class="col-pp-100 canvas" id="graph-container")
