@@ -71,7 +71,7 @@ object PagePreprocessor extends Serializable {
   private def getNeighbours(page: String) : Seq[String] = {
     linkRecognizer.findAllIn(page)
       .map(new Link(_).InputLine.run() match {
-        case Success(link) => link
+        case Success(link) => link.replace(":", "_")
         case _ => ""
       }
     ).toList

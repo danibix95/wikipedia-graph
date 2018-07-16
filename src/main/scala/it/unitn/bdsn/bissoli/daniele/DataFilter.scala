@@ -1,6 +1,7 @@
 package it.unitn.bdsn.bissoli.daniele
 
 import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions.{not, isnan}
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object DataFilter extends Serializable {
@@ -30,5 +31,6 @@ object DataFilter extends Serializable {
       "timestamp_2",
       "cosine_similarity"
     )
+    .filter(not(isnan($"cosine_similarity")))
   }
 }
