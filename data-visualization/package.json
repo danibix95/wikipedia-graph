@@ -26,6 +26,7 @@
   "dependencies": {
     "compression": "^1.7.2",
     "cytoscape": "^3.2.14",
+    "cytoscape-cose-bilkent": "^4.0.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-minify": "^1.0.0",

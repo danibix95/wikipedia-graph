@@ -10,7 +10,7 @@ block style
 
 block scripts
     script(src="/lib/cytoscape/cytoscape.min.js")
-    //-script(src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.14/cytoscape.min.js")
+    script(src="/lib/cytoscape/cose-bilkent.js")
     script(src="/js/loadGraphEv.js")
 
 //- insert page content
@@ -24,9 +24,15 @@ block content
     .container-full-width
         div(class="row submit-fields")
             .col-pp-100
-                h3(class="text-center title")= "Wikipedia Graph Visualizer"
+                h3(class="text-center title col-pp-50")= "Wikipedia Graph Visualizer"
+                - const date = new Date(max)
+                h3(class="col-pp-50" id="selected-date")= `Current Date: ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
                 //- the step is computed as one week in milliseconds
-                input(type="range" id="time" name="time" min=min max=max value=max step=(7 * 24 * 3600 * 1000))
+                - const week = (7 * 24 * 3600 * 1000);
+                input(type="range" id="time" name="time" min=min max=max value=(max+week) step=week)
     .container-full-width
         .row
+            div(class="spinner" id="spinner")
+                .double-bounce1
+                .double-bounce2
             div(class="col-pp-100 canvas" id="graph-container")

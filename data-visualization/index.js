@@ -29,6 +29,7 @@ app.post("/queryEv", server.graph);
 app.use("/", express.static(path.join(__dirname, "public"), {dotfiles: "deny"}));
 app.use("/lib/pavilion", express.static(path.join(__dirname, "node_modules/pavilion/dist"), {dotfiles: "deny"}));
 app.use("/lib/cytoscape", express.static(path.join(__dirname, "node_modules/cytoscape/dist"), {dotfiles: "deny"}));
+app.use("/lib/cytoscape/cose-bilkent.js", express.static(path.join(__dirname, "node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js"), {dotfiles: "deny"}));
 
 app.listen(process.env.PORT || app.get("port"), function () {
     console.log("Website listening on port " + app.get("port"));

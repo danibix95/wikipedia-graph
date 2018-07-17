@@ -12,8 +12,7 @@ class Control {
             response.redirect("/missing");
             return response.end();
         }
-        const pageTitle = request.body.pageTitle[0].toUpperCase()
-                        + request.body.pageTitle.slice(1).toLowerCase();
+        const pageTitle = request.body.pageTitle.toString();
 
         const pageTimestamp = request.body.pageTimestamp
             ? new Date(request.body.pageTimestamp).toISOString()

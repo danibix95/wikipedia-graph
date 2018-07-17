@@ -8,9 +8,8 @@
 }, {
   "selector": "node",
   "style": {
-    "width": "30",
-    "height": "30",
-    "content": "data(id)",
+    "width": "20",
+    "height": "20",
     "font-size": "12px",
     "text-valign": "center",
     "text-halign": "center",
@@ -41,6 +40,7 @@
 }, {
   "selector": "node:selected",
   "style": {
+    "content": "data(id)",
     "border-width": "6px",
     "border-color": "#AAD8FF",
     "border-opacity": "0.5",
@@ -59,7 +59,7 @@
     "target-arrow-color": "mapData(similarity, 0, 1, black, deepskyblue)",
     "opacity": "0.8",
     "line-color": "mapData(similarity, 0, 1, black, deepskyblue)",
-    "width": "mapData(similarity, 0, 1, 0.5, 10)"
+    "width": "mapData(similarity, 0, 1, 0.5, 5)"
   }
 }, {
   "selector": "edge:active",
@@ -94,60 +94,5 @@
   "selector": "edge.filtered",
   "style": {
     "opacity": "0"
-  }
-}, {
-  "selector": "edge[group=\"coexp\"]",
-  "style": {
-    "line-color": "#d0b7d5"
-  }
-}, {
-  "selector": "edge[group=\"coloc\"]",
-  "style": {
-    "line-color": "#a0b3dc"
-  }
-}, {
-  "selector": "edge[group=\"gi\"]",
-  "style": {
-    "line-color": "#90e190"
-  }
-}, {
-  "selector": "edge[group=\"path\"]",
-  "style": {
-    "line-color": "#9bd8de"
-  }
-}, {
-  "selector": "edge[group=\"pi\"]",
-  "style": {
-    "line-color": "#eaa2a2"
-  }
-}, {
-  "selector": "edge[group=\"predict\"]",
-  "style": {
-    "line-color": "#f6c384"
-  }
-}, {
-  "selector": "edge[group=\"spd\"]",
-  "style": {
-    "line-color": "#dad4a2"
-  }
-}, {
-  "selector": "edge[group=\"spd_attr\"]",
-  "style": {
-    "line-color": "#D0D0D0"
-  }
-}, {
-  "selector": "edge[group=\"reg\"]",
-  "style": {
-    "line-color": "#D0D0D0"
-  }
-}, {
-  "selector": "edge[group=\"reg_attr\"]",
-  "style": {
-    "line-color": "#D0D0D0"
-  }
-}, {
-  "selector": "edge[group=\"user\"]",
-  "style": {
-    "line-color": "#f0ec86"
   }
 }]
