@@ -30,13 +30,6 @@ project/plugins/project/
 ### Spark folders
 spark-warehouse
 
-# Sample resources
-!src/main/resources/NGC_4457.xml
-src/main/resources/*.xml
-src/main/resources/result
-src/main/resources/data
-src/main/resources/intermediate
-
 # NodeJS
 node_modules/
 .npm

@@ -1,0 +1,38 @@
+//- Incorporate default page layout
+extends layout.pug
+
+//- edit page title
+block title
+    title= "Wikipedia Graph Visualizer - Evolution"
+
+block style
+    link(rel="stylesheet" href="/css/main.css")
+
+block scripts
+    script(src="/lib/cytoscape/cytoscape.min.js")
+    script(src="/lib/cytoscape/cose-bilkent.js")
+    script(src="/js/loadGraphEv.js")
+
+//- insert page content
+block content
+    if msg
+        .container-full-width
+            div(class="row submit-fields error")
+                .col-pp-100
+                    h3= msg
+
+    .container-full-width
+        div(class="row submit-fields")
+            .col-pp-100
+                h3(class="text-center title col-pp-50")= "Wikipedia Graph Visualizer"
+                - const date = new Date(max)
+                h3(class="col-pp-50" id="selected-date")= `Current Date: ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+                //- the step is computed as one week in milliseconds
+                - const week = (7 * 24 * 3600 * 1000);
+                input(type="range" id="time" name="time" min=min max=max value=(max+week) step=week)
+    .container-full-width
+        .row
+            div(class="spinner" id="spinner")
+                .double-bounce1
+                .double-bounce2
+            div(class="col-pp-100 canvas" id="graph-container")

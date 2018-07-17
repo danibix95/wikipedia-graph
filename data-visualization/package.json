@@ -1,6 +1,6 @@
 {
   "name": "wikipedia-graph",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Data visualization module of wikipedia-graph project",
   "main": "index.js",
   "scripts": {
@@ -26,9 +26,11 @@
   "dependencies": {
     "compression": "^1.7.2",
     "cytoscape": "^3.2.14",
+    "cytoscape-cose-bilkent": "^4.0.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-minify": "^1.0.0",
+    "knuth-shuffle": "^1.0.8",
     "neo4j-driver": "^1.6.2",
     "node-html-parser": "^1.1.6",
     "pavilion": "^2.0.3",

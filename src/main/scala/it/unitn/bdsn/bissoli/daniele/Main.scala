@@ -63,8 +63,10 @@ object Main extends SparkSessionWrapper {
       val (processedPage, neighbours) =
         PagePreprocessor.extractFeatures(r.getAs[String]("text"))
       // build new dataframe row
+      // NOTE: replace ":" in title to bypass URI path for Wikipedia Category pages
+      // lower case avoid pages with different cases to be considered different
       (
-        r.getAs[String]("title"),
+        r.getAs[String]("title").replace(":", "_").toLowerCase(),
         r.getAs[Timestamp]("timestamp"),
         processedPage,
         neighbours
@@ -93,7 +95,7 @@ object Main extends SparkSessionWrapper {
       .map(_.getPath.toString)
   }
 
-  def similarity(path: String, output: String): Unit = {
+  def similarity(path: String, output: String, partitions: Int = 32): Unit = {
     import spark.implicits._
 
     val linksFlatten = udf {
@@ -104,6 +106,7 @@ object Main extends SparkSessionWrapper {
     val folders : Seq[String] = getListOfSubDirectories(inputPath)
     folders.map((l: String) => spark.read.parquet(l))
       .foreach((df : DataFrame) => {
+        // collect the set of all linked pages by all the page versions
         val tmpNeighbours : Row = df.groupBy("title")
           .agg(collect_set("neighbours").alias("tmp"))
           .withColumn("all_neighbours", linksFlatten($"tmp"))
@@ -112,26 +115,20 @@ object Main extends SparkSessionWrapper {
           // since each input dataframe was built to contain a single page
           .take(1)(0)
 
-        val tmpDFlist = tmpNeighbours.getAs[Seq[String]]("all_neighbours")
+        val tmpDFlist : Seq[DataFrame] =
+          tmpNeighbours.getAs[Seq[String]]("all_neighbours")
           .map(l => Try(spark.read.parquet(s"$inputPath/to_split=$l")))
-          /* Note: this collect is of Scala collections, not Spark SQL */
+          /* Note: this collect function belongs to Scala collections, not Spark SQL */
           .collect { case Success(readDF) => readDF }
 
-        // if there are more than 2 non-empty dataframe
-        // then collapse into a single one
+        // gather all dataframes into a single one
         val neighbours : DataFrame = {
-          if (tmpDFlist.count(_.count() > 1) > 1) {
-            tmpDFlist.reduceLeft(_.union(_)).distinct()
-          }
-          else {
-            Try(tmpDFlist.filter(_.count() > 1).head) match {
-              /* return the only dataframe in the list */
-              case Success(first) => first
-              /* otherwise return an empty dataframe */
-              case _ => Seq.empty[(String, Timestamp, Vector, Double, Seq[String])]
-                .toDF("title", "timestamp", "features", "norm", "neighbours")
-            }
-          }
+          (tmpDFlist.filter(_.count() > 0) match {
+            case list if list.length > 1 => list.reduce(_.union(_)).distinct()
+            case single if single.length == 1 => single.head
+            case _ => Seq.empty[(String, Timestamp, Vector, Double, Seq[String])]
+              .toDF("title", "timestamp", "features", "norm", "neighbours")
+          }).coalesce(partitions)
         }
 
         val pageTitle = tmpNeighbours.getAs[String]("title")
@@ -146,18 +143,18 @@ object Main extends SparkSessionWrapper {
       })
   }
 
-  def filter(path: String, output: String) : Unit = {
+  def filter(path: String, output: String, partitions: Int = 16) : Unit = {
     val outputDir = s"$path/$output/final"
-    // clear output folder
-    FileSystem.get(spark.sparkContext.hadoopConfiguration)
-      .delete(new Path(outputDir), true)
 
     val inputPath = s"$path/$output/relationships"
     val folders : Seq[String] = getListOfSubDirectories(inputPath)
     folders.map((l: String) => spark.read.parquet(l))
       .filter(_.count > 0)
       .map(DataFilter.filter)
-      .foreach(_.write.mode(SaveMode.Append).csv(outputDir))
+      .reduceLeft(_.union(_))
+      .distinct
+      .coalesce(partitions)
+      .write.mode(SaveMode.Overwrite).csv(outputDir)
   }
 
   /** Returns a Dataframe representing all Wikipedia pages

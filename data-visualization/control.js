@@ -12,8 +12,7 @@ class Control {
             response.redirect("/missing");
             return response.end();
         }
-        const pageTitle = request.body.pageTitle[0].toUpperCase()
-                        + request.body.pageTitle.slice(1).toLowerCase();
+        const pageTitle = request.body.pageTitle.toString();
 
         const pageTimestamp = request.body.pageTimestamp
             ? new Date(request.body.pageTimestamp).toISOString()
@@ -27,6 +26,32 @@ class Control {
                 console.log("Error: ", error);
                 response.redirect("/");
             });
+    }
+
+    static graph(request, response) {
+        const time = request.body.time
+            ? new Date(request.body.time).toISOString()
+            : new Date().toISOString();
+
+        model.retrieveGraph(time)
+            .then((json_data) => {
+                response.send(json_data);
+            })
+            .catch((error) => {
+                console.log("Error: ", error);
+                response.redirect("/");
+            });
+    }
+
+    static evolution(request, response) {
+        model.retrieveRange()
+            .then((data) => {
+                response.render("evolution", data);
+            })
+            .catch((error) => {
+                console.error(error);
+                response.render("evolution", { msg: "Impossible to load range timestamp!"});
+            })
     }
 }
 
