@@ -64,8 +64,9 @@ object Main extends SparkSessionWrapper {
         PagePreprocessor.extractFeatures(r.getAs[String]("text"))
       // build new dataframe row
       // NOTE: replace ":" in title to bypass URI path for Wikipedia Category pages
+      // lower case avoid pages with different cases to be considered different
       (
-        r.getAs[String]("title").replace(":", "_"),
+        r.getAs[String]("title").replace(":", "_").toLowerCase(),
         r.getAs[Timestamp]("timestamp"),
         processedPage,
         neighbours
@@ -144,9 +145,6 @@ object Main extends SparkSessionWrapper {
 
   def filter(path: String, output: String, partitions: Int = 16) : Unit = {
     val outputDir = s"$path/$output/final"
-    // clear output folder
-    FileSystem.get(spark.sparkContext.hadoopConfiguration)
-      .delete(new Path(outputDir), true)
 
     val inputPath = s"$path/$output/relationships"
     val folders : Seq[String] = getListOfSubDirectories(inputPath)
