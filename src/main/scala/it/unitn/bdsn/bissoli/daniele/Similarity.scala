@@ -1,12 +1,14 @@
 package it.unitn.bdsn.bissoli.daniele
 
-import org.apache.spark.ml.linalg.Vector
-import org.apache.spark.sql.{DataFrame, SparkSession}
-import org.apache.spark.sql.functions.udf
-
 import java.sql.Timestamp
 
-object CosineSimilarity extends Serializable {
+import org.apache.spark.ml.linalg.Vector
+import org.apache.spark.sql.functions.{collect_set, udf}
+import org.apache.spark.sql.{DataFrame, SparkSession}
+
+import scala.util.{Success, Try}
+
+object Similarity extends Serializable {
   // import implicits using current spark session
   // (used to recognize $ as col and for default encoders)
   lazy private val spark = SparkSession.getActiveSession.get
@@ -27,7 +29,7 @@ object CosineSimilarity extends Serializable {
   /** Returns a DataFrame with the cosine similarity of each pair of pages
     * given in input as DataFrame containing Wikipedia pages representation.
     * */
-  def computeCS(df1 : DataFrame, df2 : DataFrame) : DataFrame = {
+  private def computeCS(df1 : DataFrame, df2 : DataFrame) : DataFrame = {
     // UDF function to check if the title of second page
     // is contained in one of the links of the first one
     val isLinked = udf {
@@ -72,5 +74,31 @@ object CosineSimilarity extends Serializable {
         "timestamp_2",
         "cosine_similarity"
       )
+  }
+
+  def compare(df: DataFrame, inputPath: String) : DataFrame = {
+    val linksFlatten = udf {
+      links: Seq[Seq[String]] => links.map(_.toSet)
+        .reduce((a, b) => a | b).toSeq
+    }
+    // collect the set of all linked pages by all the page versions
+    val neighbours : DataFrame = df.groupBy("title")
+      .agg(collect_set("neighbours").alias("tmp"))
+      .withColumn("all_neighbours", linksFlatten($"tmp"))
+      .select("title", "all_neighbours")
+      // taking the first row of resulting dataframe is correct
+      // since each input dataframe was built to contain a single page
+      .take(1)(0)
+      .getAs[Seq[String]]("all_neighbours")
+      .map(l => Try(spark.read.parquet(s"$inputPath/to_split=$l")))
+      .collect { case Success(readDF) => readDF }
+      .filter(_.count() > 0) match {
+        case list if list.length > 1 => list.reduce(_.union(_)).distinct()
+        case single if single.length == 1 => single.head
+        case _ => Seq.empty[(String, Timestamp, Vector, Double, Seq[String])]
+          .toDF("title", "timestamp", "features", "norm", "neighbours")
+      }
+
+    computeCS(df, neighbours)
   }
 }
