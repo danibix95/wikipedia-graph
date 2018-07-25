@@ -11,7 +11,7 @@ import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 trait SparkSessionWrapper {
   // remove master if you want to execute this program in a cluster
-  lazy val spark: SparkSession = {
+  val spark: SparkSession = {
     val sp = SparkSession
       .builder()
       .appName("wikipediaGraph")
@@ -51,41 +51,40 @@ object Main extends SparkSessionWrapper {
     spark.stop()
   }
 
-  def preprocessing(path: String, folder: String, output: String)
-    : Unit = {
+  def preprocessing(path: String, folder: String, output: String) : Unit = {
     import spark.implicits._
+
+    val outputPath = s"$path/$output/preprocessed"
+
+    // clear the folder from previous output
+    Seq.empty[(Int)].toDF().write
+      .mode(SaveMode.Overwrite).parquet(outputPath)
 
     val wikiW2V = Word2VecModel.load(s"$path/W2V")
 
     getListOfFiles(s"$path/$folder")
       .map(extractPages)
       // Pre-processing of Wikipedia pages
-      .map(PagePreprocessor.preprocess(_, wikiW2V))
-      // copy the title column since partitioning remove selected column
-      .map(_.withColumn("to_split", $"title"))
-      .reduceLeft(_.union(_))
-      .write.partitionBy("to_split")
-      .mode(SaveMode.Overwrite).parquet(s"$path/$output/preprocessed")
+      .foreach(PagePreprocessor.preprocess(_, wikiW2V, outputPath))
   }
 
   def comparing(path: String, partitions: Int = 32): Unit = {
-    val inputPath = s"$path/preprocessed"
-
-    getListOfSubDirectories(inputPath)
+    getListOfSubDirectories(s"$path/preprocessed")
       .map(spark.read.parquet(_))
-      .map(Similarity.compare(_, inputPath))
-      .reduceLeft(_.union(_))
-      .distinct
-      .coalesce(partitions)
-      .write.mode(SaveMode.Overwrite)
-      .parquet(raw"$path/relationships/")
+      .zipWithIndex.foreach {
+        case (df, index) => Similarity.compare(df, path, index)
+      }
   }
 
-  def filtering(resourcePath: String, partitions: Int = 32) : Unit = {
-    val inputDir = s"$resourcePath/relationships"
-    val outputDir = s"$resourcePath/final"
+  def filtering(path: String, partitions: Int = 32) : Unit = {
+    val inputDir = s"$path/relationships"
+    val outputDir = s"$path/final"
 
-    DataFilter.filter(spark.read.parquet(inputDir))
+    getListOfSubDirectories(inputDir)
+      .map(spark.read.parquet(_))
+      .map(DataFilter.filter)
+      .reduceLeft(_.union(_))
+      .distinct
       .coalesce(partitions)
       .write.mode(SaveMode.Overwrite).csv(outputDir)
   }

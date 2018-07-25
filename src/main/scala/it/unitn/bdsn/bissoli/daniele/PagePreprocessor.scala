@@ -5,7 +5,7 @@ import java.sql.Timestamp
 import org.apache.spark.ml.feature.Word2VecModel
 import org.apache.spark.ml.linalg.{Vector, Vectors}
 import org.apache.spark.sql.functions.udf
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import org.parboiled2._
 
 import scala.math.{max, min}
@@ -70,6 +70,9 @@ object PagePreprocessor extends Serializable {
     }
   }
 
+  /** Returns the list of all the Wikipedia internal links
+    * (represented as page title) contained in the given page.
+    */
   private def getNeighbours(page: String) : Seq[String] = {
     linkRecognizer.findAllIn(page)
       .map(new Link(_).InputLine.run() match {
@@ -126,7 +129,8 @@ object PagePreprocessor extends Serializable {
     (infoboxContent ++ linksContext, neighbours)
   }
 
-  def preprocess(dataframe: DataFrame, W2VModel: Word2VecModel) : DataFrame = {
+  def preprocess(dataframe: DataFrame, W2VModel: Word2VecModel,
+                 output: String) : Unit = {
     val norm = udf((vector: Vector) => Vectors.norm(vector, 2))
 
     val initialData = dataframe.map(row => {
@@ -145,5 +149,9 @@ object PagePreprocessor extends Serializable {
       .transform(initialData)
       .withColumn("norm", norm($"features"))
       .select("title", "timestamp", "features", "norm", "neighbours")
+      // copy the title column since partitioning remove selected column
+      .withColumn("to_split", $"title")
+      .write.partitionBy("to_split")
+      .mode(SaveMode.Append).parquet(output)
   }
 }

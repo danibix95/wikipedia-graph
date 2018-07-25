@@ -4,7 +4,7 @@ import java.sql.Timestamp
 
 import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.sql.functions.{collect_set, udf}
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 import scala.util.{Success, Try}
 
@@ -76,7 +76,7 @@ object Similarity extends Serializable {
       )
   }
 
-  def compare(df: DataFrame, inputPath: String) : DataFrame = {
+  def compare(df: DataFrame, path: String, index: Long) : Unit = {
     val linksFlatten = udf {
       links: Seq[Seq[String]] => links.map(_.toSet)
         .reduce((a, b) => a | b).toSeq
@@ -90,7 +90,7 @@ object Similarity extends Serializable {
       // since each input dataframe was built to contain a single page
       .take(1)(0)
       .getAs[Seq[String]]("all_neighbours")
-      .map(l => Try(spark.read.parquet(s"$inputPath/to_split=$l")))
+      .map(l => Try(spark.read.parquet(s"$path/preprocessed/to_split=$l")))
       .collect { case Success(readDF) => readDF }
       .filter(_.count() > 0) match {
         case list if list.length > 1 => list.reduce(_.union(_)).distinct()
@@ -100,5 +100,7 @@ object Similarity extends Serializable {
       }
 
     computeCS(df, neighbours)
+      .write.mode(SaveMode.Overwrite)
+      .parquet(raw"$path/relationships/$index")
   }
 }
