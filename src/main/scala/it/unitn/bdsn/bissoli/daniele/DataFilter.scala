@@ -1,8 +1,8 @@
 package it.unitn.bdsn.bissoli.daniele
 
 import org.apache.spark.sql.types._
-import org.apache.spark.sql.functions.{not, isnan}
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.functions.{isnan, not}
+import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 
 object DataFilter extends Serializable {
   lazy private val spark = SparkSession.getActiveSession.get
@@ -12,7 +12,7 @@ object DataFilter extends Serializable {
     * that are linked only with the latest page version
     * relative to current page version
     * */
-  def filter(df: DataFrame) : DataFrame = {
+  def filter(df: DataFrame, outputDir: String, partitions: Int = 8) : Unit = {
     val restrictedDF = df.withColumn("ts1", $"timestamp_1")
       .withColumn("ts2", $"timestamp_2".cast(LongType))
       .groupBy("title_1", "ts1", "title_2")
@@ -32,5 +32,7 @@ object DataFilter extends Serializable {
       "cosine_similarity"
     )
     .filter(not(isnan($"cosine_similarity")))
+    .coalesce(partitions)
+    .write.mode(SaveMode.Append).csv(outputDir)
   }
 }
