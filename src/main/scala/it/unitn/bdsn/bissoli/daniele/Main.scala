@@ -57,7 +57,7 @@ object Main extends SparkSessionWrapper {
     val outputPath = s"$path/$output/preprocessed"
 
     // clear the folder from previous output
-    Seq.empty[(Int)].toDF().write
+    Seq.empty[Int].toDF().write
       .mode(SaveMode.Overwrite).parquet(outputPath)
 
     val wikiW2V = Word2VecModel.load(s"$path/W2V")
@@ -77,16 +77,18 @@ object Main extends SparkSessionWrapper {
   }
 
   def filtering(path: String, partitions: Int = 32) : Unit = {
+    import spark.implicits._
+
     val inputDir = s"$path/relationships"
     val outputDir = s"$path/final"
 
+    // clear the folder from previous output
+    Seq.empty[Int].toDF().write
+      .mode(SaveMode.Overwrite).parquet(outputDir)
+
     getListOfSubDirectories(inputDir)
       .map(spark.read.parquet(_))
-      .map(DataFilter.filter)
-      .reduceLeft(_.union(_))
-      .distinct
-      .coalesce(partitions)
-      .write.mode(SaveMode.Overwrite).csv(outputDir)
+      .foreach(DataFilter.filter(_, outputDir))
   }
 
   def getListOfFiles(directoryName: String): Array[String] = {

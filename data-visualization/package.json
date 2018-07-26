@@ -7,7 +7,7 @@
     "load": "node loadData.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "remoteLoad": "node remoteLoadData.js"
+    "remoteLoad": "node hdfsLoadData.js"
   },
   "repository": {
     "type": "git",
@@ -34,9 +34,11 @@
     "neo4j-driver": "^1.6.2",
     "node-html-parser": "^1.1.6",
     "pavilion": "^2.0.3",
-    "pug": "^2.0.3",
-    "request": "^2.87.0",
-    "request-promise": "^4.2.2"
+    "pug": "^2.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "google-protobuf": "^3.6.0",
+    "kerberos": "0.0.24",
+    "nhdfs": "0.0.4"
+  }
 }
