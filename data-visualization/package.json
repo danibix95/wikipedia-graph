@@ -32,7 +32,6 @@
     "express-minify": "^1.0.0",
     "knuth-shuffle": "^1.0.8",
     "neo4j-driver": "^1.6.2",
-    "node-html-parser": "^1.1.6",
     "pavilion": "^2.0.3",
     "pug": "^2.0.3"
   },

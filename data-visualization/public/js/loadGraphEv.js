@@ -1,4 +1,6 @@
-// Cose Demo from Cytoscape
+// Daniele Bissoli - 197810
+// This script is meant to load the visualization tool
+// for showing the evolution of Wikipedia graph
 "use strict";
 
 // style used by Cytoscape to draw the graph
@@ -52,7 +54,7 @@ async function drawGraph(time, loadingElement) {
         elements: graphData,
         style: graphStyle,
 
-        /*layout: {
+        layout: {
             name: 'cose',
             idealEdgeLength: 100,
             nodeOverlap: 32,
@@ -62,34 +64,13 @@ async function drawGraph(time, loadingElement) {
             randomize: true,
             componentSpacing: 50,
             nodeRepulsion: 250000,
-            edgeElasticity: 200,
+            edgeElasticity: 250,
             nestingFactor: 1.2,
-            gravity: 200,
+            gravity: 80,
             numIter: 2000,
-            initialTemp: 700,
+            initialTemp: 720,
             coolingFactor: 0.95,
             minTemp: 1.0
-        }*/
-
-        layout: {
-            name: "cose-bilkent",
-            nodeDimensionsIncludeLabels: false,
-            nodeOverlap: 32,
-            refresh: 30,
-            fit: true,
-            padding: 20,
-            randomize: true,
-            nodeRepulsion: 500000,
-            idealEdgeLength: 80,
-            edgeElasticity: 0.3,
-            nestingFactor: 1.1,
-            gravity: 80,
-            numIter: 2500,
-            initialTemp: 1000,
-            coolingFactor: 0.95,
-            minTemp: 1.0,
-            animate: false,
-            initialEnergyOnIncremental: 0.5
         }
     });
 }

@@ -29,7 +29,7 @@ block content
                 h3(class="col-pp-50" id="selected-date")= `Current Date: ${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
                 //- the step is computed as one week in milliseconds
                 - const week = (7 * 24 * 3600 * 1000);
-                input(type="range" id="time" name="time" min=min max=max value=(max+week) step=week)
+                input(type="range" id="time" name="time" min=min max=max value=((min+max)/2) step=week)
     .container-full-width
         .row
             div(class="spinner" id="spinner")

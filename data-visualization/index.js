@@ -9,22 +9,24 @@ const compression = require("compression");
 const server = require("./control.js");
 
 process.title = "wikipedia-graph";
-// process.env.NODE_ENV = "production";
+process.env.NODE_ENV = "production";
 
 const app = express();
 app.set("title", "Wikipedia Graph Visualizer");
 app.set("port", (process.env.PORT || 20001));
 app.set("view engine", "pug");
 // do not invert the following two lines
-// app.use(compression());
-// app.use(minify());
+app.use(compression());
+app.use(minify());
 app.use(express.json());
 
 /* =================== */
-app.get("/", server.home);
-app.get("/evolution", server.evolution);
-app.post("/query", server.query);
+app.get("/", server.evolution);
 app.post("/queryEv", server.graph);
+
+// these are the endpoints for the old application
+app.get("/selection", server.selection);
+app.post("/query", server.query);
 /* =================== */
 app.use("/", express.static(path.join(__dirname, "public"), {dotfiles: "deny"}));
 app.use("/lib/pavilion", express.static(path.join(__dirname, "node_modules/pavilion/dist"), {dotfiles: "deny"}));
