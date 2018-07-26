@@ -2,8 +2,8 @@
 const model = new (require("./db.js"))();
 
 class Control {
-    static home(request, response) {
-        response.render("home", {});
+    static selection(request, response) {
+        response.render("select", {});
     }
 
     static query(request, response) {

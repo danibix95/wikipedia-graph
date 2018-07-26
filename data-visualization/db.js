@@ -18,10 +18,7 @@ return l`;
 const getPagesTitle = `match (n:Page) return n.title as title limit 2000`;
 const getRanges = `match (n:Page)-[r:IS_LINKED_TO]->(m:Page)
 return min(r.ts_from) as min, max(r.ts_from) as max`;
-
 /* =================== */
-
-// pageTimestamp : pageTimestamp
 
 class DB {
     constructor() {
@@ -63,7 +60,7 @@ class DB {
         .catch((error) => {
             console.log(error);
             session.close();
-            // since an error has happened,
+            // since an error has happened at this point,
             // it is safe to return an empty object
             return {};
         });
