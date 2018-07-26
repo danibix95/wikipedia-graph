@@ -5,12 +5,12 @@ This is the project for the Big Data and Social Network course at University of 
 ## Project requirements
 In order to run all the modules of the project, the following programs have to be installed:
 
-+ Scala programming language (v2.11.*)
++ Scala programming language (v2.11.* - https://www.scala-lang.org/)
 + SBT (Simple Build Tool)
 + Java JDK (v8)
 + Spark libraries (v2.3.* - http://spark.apache.org/)
 + Neo4j (v3.4.5 - https://neo4j.com/)
-+ NodeJS (v10.3.0 or later)
++ NodeJS (v10.3.0 or later - https://nodejs.org/en/)
 
 ## Run the processing pipeline
 Before running the processing pipeline, a set of folders must be created, where files are going to be held (HDFS or local filesystem), according to this structure:
@@ -73,7 +73,7 @@ and create a file named `.env` with the following information inside:
 
 Then it is possible to install required libraries by running :
 
-    npm install  
+    npm install --production
 
 and if no errors have been received it is possible to load the data into the graph database with the following command.
 
